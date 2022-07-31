@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./JS/main.js"></script>
+
+    <title>Simulador Interactivo</title>
+  </head>
+  <body class="green lighten-5"> 
+    <div class="container card-panel  indigo lighten-4">
+      <h1 class="center-align titulo">Calcula compra en cuotas</h1>
+      <p class="flow-text">
+        Arranca en consola llamando a la fución <em class="blue-text bold">calculaCuotas</em>.
+        Sobre la base de un importe neto de $5500,00 el usuario debe
+        elegir las cuotas que desea pagar (de 1 a 12)
+        <ul>
+          <li>- si elige de 2 a 12 llama a la función <em class="orange-text text-accent-3">calculaIntereses</em>, esta aplica una TCEA del 85% , para terminar se muestra el importe final, el número cuotas y el valor de cada cuota.</li>
+          <li>- si elige un número diferente vuelve a preguntar hasta 2 veces y finaliza.</li>
+          <li>- si elige 1 cuota, muestra el importe neto sin intereses</li>
+        </ul>
+      </p>
+    </div>
+  </body>
+</html>
