@@ -12,19 +12,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./JS/main.js"></script>
 
-    <title>Simulador Interactivo</title>
+    <title>Simulador Interactivo - Incorpora Arrays</title>
   </head>
   <body class="green lighten-5"> 
     <div class="container card-panel  indigo lighten-4">
-      <h1 class="center-align titulo">Calcula compra en cuotas</h1>
+      <h1 class="center-align titulo">Simulador con arrays</h1>
       <p class="flow-text">
-        Arranca en consola llamando a la fución <em class="blue-text bold">calculaCuotas</em>.
-        Sobre la base de un importe neto de $5500,00 el usuario debe
-        elegir las cuotas que desea pagar (de 1 a 12)
-        <ul>
-          <li>- si elige de 2 a 12 llama a la función <em class="orange-text text-accent-3">calculaIntereses</em>, esta aplica una TCEA del 85% , para terminar se muestra el importe final, el número cuotas y el valor de cada cuota.</li>
-          <li>- si elige un número diferente vuelve a preguntar hasta 2 veces y finaliza.</li>
-          <li>- si elige 1 cuota, muestra el importe neto sin intereses</li>
+        - Se incorpora un array de objetos llamado <em class="blue-text bold">productos</em>.
+        - Con la función <em class="orange-text text-accent-3">generadorAutomatico</em>
+        se cargan los productos teniendo como constructor la clase <em class="blue-text bold">Producto</em>.
+        - Dicha clase incorpora dos métodos, <em>precioConIva</em> para calcular el precio final y
+        <em>restaStock</em> para descontar unidades del stock.
+        - La función <em class="orange-text text-accent-3">agregarProductos</em> permite agregar mas productos en la tabla.       
         </ul>
       </p>
     </div>
