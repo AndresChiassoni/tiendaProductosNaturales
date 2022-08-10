@@ -93,13 +93,11 @@ function calculaCompra() {
         if (codigo == 0) {
             break;
         }
-
-        let cantidad = parseInt(prompt("Ingresa la cantidad"));
         let resultado = productos.find(elemento => elemento.codigo === codigo);
         if (resultado === undefined) {
             alert("El codigo no existe!")
-        }
-        else {
+        } else {
+            let cantidad = parseInt(prompt("Ingresa la cantidad"));
             console.log("Producto:", (resultado.nombre), " - precio unitario $", (resultado.precio),
                 "- cantidad:", cantidad, " subtotal $", (resultado.precio * cantidad).toFixed(2))
             acum += (resultado.precio) * cantidad;
