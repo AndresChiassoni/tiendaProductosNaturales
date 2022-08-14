@@ -110,7 +110,8 @@ function calculaCompra() {
 }
 
 function ingresarTexto() {
-    parrafoUsuario.innerText = prompt("Ingrese un texto a la página")
+    parrafoUsuario.innerText = prompt("Ingrese un texto a la página").toUpperCase()
+    parrafoUsuario.className = "texto-ingresado"
 }
 
 function cargaTablaDeProductos(){
