@@ -7,6 +7,8 @@ let cuotasFinac = 0;
 let acum = 0;
 let codigo = 1;
 const productos = [];
+const parrafoUsuario = document.getElementById("parrafo-usuario")
+
 
 class Producto {
     constructor(codigo, nombre, marca, precio, stock) {
@@ -106,3 +108,25 @@ function calculaCompra() {
 
     console.log("Su compra TOTAL es de $", acum);
 }
+
+function ingresarTexto() {
+    parrafoUsuario.innerText = prompt("Ingrese un texto a la página")
+}
+
+function cargaTablaDeProductos(){
+    const cuerpoTabla = document.getElementById("cuerpo-tabla")
+    productos.forEach((producto) => {
+        cuerpoTabla.innerHTML += `<tr>
+                                    <td>${producto.codigo}</td>
+                                    <td>${producto.nombre}</td>
+                                    <td>${producto.marca}</td>
+                                    <td>${producto.precio}</td>
+                                    <td>${producto.stock}</td>
+                                </tr>`
+    })
+}
+
+cargaTablaDeProductos()
+
+
+

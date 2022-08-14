@@ -1,196 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./Assets/images/logo_small.ico" />
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./JS/main.js"></script>
-    <title>Primera preentrega</title>
-  </head>
-  <body class="green lighten-5">
-    <header>
-      <nav>
-        <div class="nav-wrapper #f57f17 yellow darken-4">
-          <a href="#" class="brand-logo">LOGO</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">link1</a></li>
-            <li><a href="#">link2</a></li>
-            <li><a href="#">link3</a></li>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./Assets/images/logo_small.ico" />
+  <link rel="stylesheet" href="./CSS/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script defer src="./JS/main.js"></script>
+  <title>Primera preentrega</title>
+</head>
+
+<body class="green lighten-5">
+  <header>
+    <nav>
+      <div class="nav-wrapper #f57f17 yellow darken-4">
+        <a href="#" class="brand-logo">LOGO</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#">link1</a></li>
+          <li><a href="#">link2</a></li>
+          <li><a href="#">link3</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <h1 class="center-align">Productos Naturales</h1>
+    <p id="parrafo-usuario"></p>
+    <h4>DESAFÍO COMPLEMENTARIO
+      Interactuar con HTML</h4>
+
+    <ol>
+      <li>
+        Función <em>ingresarTexto()</em> permite ingresar un texto
+        al html desde consola
+      </li>
+      <li>
+        Función <em>cargaTablaDeProductos</em> carga los productos desde
+        JS -
+      </li>
+      
+    </ol>
+    <h5>Entregas anteriores</h5>
+    
+    <ol>
+      <li>
+        Se agregó la linea <em>generadorAutomatico()</em> para cargar
+        la lista de productos al iniciar la página.
+      </li>
+      <li>
+        Función <em class="orange-text text-accent-3">buscarProducto()</em>:
+        pide al usuario un producto por nombre e itera sobre el array
+        'productos' utilizando 'filter' e 'includes' para devoler todos los
+        productos que contengan lo ingresado.
+      </li>
+      <li>
+        Función
+        <em class="orange-text text-accent-3">calculaCompra()</em>: solicita
+        código del producto y las cantidades, se va mostrando cada producto elegido, la
+        cantidad y el subtotal por producto.
+        Al ingresar '0' como código de producto
+        se finaliza la compra y se muestra el importe total.
+        Si el usuario ingresa un código que no existe se muestra un 'alert' y vuelve
+        a pedir otro código.
+      </li>
+      <li>
+        Se agregó una tabla de los productos de forma estática en la página principal.
+      </li>
+      <li>
+        Se incorpora un array de objetos llamado
+        <em class="blue-text bold">productos</em>.
+      </li>
+      <li>
+        Con la función
+        <em class="orange-text text-accent-3">generadorAutomatico()</em> se
+        cargan los productos teniendo como constructor la clase
+        <em class="blue-text bold">Producto</em>.
+      </li>
+      <li>
+        <em class="blue-text bold">Producto</em> incorpora dos métodos,
+        <em>precioConIva</em> para calcular el precio final y
+        <em>restaStock</em> para descontar unidades del stock.
+      </li>
+      <li>
+        La función <em class="orange-text text-accent-3">agregarProductos()</em> permite
+        agregar mas productos en la tabla.
+      </li>
+      <li>
+        La función
+        <em class="orange-text text-accent-3">calculaCuotas()</em> calcula el
+        importe a pagar sobre un valor ya definido consulta al usuario en
+        cuantas cuotas quiere abonar, e invocando a la función
+        <em class="orange-text text-accent-3">calculaInteres()</em>, devuelve
+        el importe total , las cuotas a pagar y el monto de cada una.
+      </li>
+    </ol>
+
+    <h3 class="center-align">Lista de productos</h3>
+    <table class="highlight light-green accent-2 z-depth-5">
+      <thead>
+        <th>codigo</th>
+        <th>nombre</th>
+        <th>marca</th>
+        <th>precio</th>
+        <th>stock</th>
+      </thead>
+      <tbody id="cuerpo-tabla">
+      </tbody>
+    </table>
+  </main>
+  <br />
+
+  <footer class="page-footer #388e3c green darken-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">
+            You can use rows and columns here to organize your footer content.
+          </p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
           </ul>
         </div>
-      </nav>
-    </header>
-    <main class="container">
-      <h1 class="center-align">Productos Naturales</h1>
-      <h3>Primera entrega proyecto final</h3>
-      <ol>
-        <li>
-          Se agregó la linea <em>generadorAutomatico()</em> para cargar
-          la lista de productos al iniciar la página.
-        </li>
-        <li>
-          Función <em class="orange-text text-accent-3">buscarProducto()</em>:
-          pide al usuario un producto por nombre e itera sobre el array
-          'productos' utilizando 'filter' e 'includes' para devoler todos los
-          productos que contengan lo ingresado.
-        </li>
-        <li>
-          Función
-          <em class="orange-text text-accent-3">calculaCompra()</em>: solicita
-          código del producto y las cantidades, se va mostrando cada producto elegido, la
-          cantidad y el subtotal por producto.
-          Al ingresar '0' como código de producto
-          se finaliza la compra y se muestra el importe total.
-          Si el usuario ingresa un código que no existe se muestra un 'alert' y vuelve
-          a pedir otro código.
-        </li>
-        <li>
-          Se agregó una tabla de los productos de forma estática en la página principal.
-        </li>
-      </ol>
-      <h4>Entregas anteriores</h4>
-      <ol>
-        <li>
-          Se incorpora un array de objetos llamado
-          <em class="blue-text bold">productos</em>.
-        </li>
-        <li>
-          Con la función
-          <em class="orange-text text-accent-3">generadorAutomatico()</em> se
-          cargan los productos teniendo como constructor la clase
-          <em class="blue-text bold">Producto</em>.
-        </li>
-        <li>
-          <em class="blue-text bold">Producto</em> incorpora dos métodos,
-          <em>precioConIva</em> para calcular el precio final y
-          <em>restaStock</em> para descontar unidades del stock.
-        </li>
-        <li>`
-          La función
-          <em class="orange-text text-accent-3">agregarProductos()</em> permite
-          agregar mas productos en la tabla.
-        </li>
-        <li>
-          La función
-          <em class="orange-text text-accent-3">calculaCuotas()</em> calcula el
-          importe a pagar sobre un valor ya definido consulta al usuario en
-          cuantas cuotas quiere abonar, e invocando a la función
-          <em class="orange-text text-accent-3">calculaInteres()</em>, devuelve
-          el importe total , las cuotas a pagar y el monto de cada una.
-        </li>
-      </ol>
-
-      <h2 class="center-align">Lista de productos</h2>
-      <table class="highlight light-green accent-2 z-depth-5">
-        <thead>
-          <th>codigo</th>
-          <th>nombre</th>
-          <th>marca</th>
-          <th>precio</th>
-          <th>stock</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1221</td>
-            <td>ACEITE DE OLIVA EXTRA VIRGEN 500ML</td>
-            <td>TERRASANA</td>
-            <td>732.15</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <td>1231</td>
-            <td>SALSA DE TOMATE 500 ML SIN T.A.C.C.</td>
-            <td>TERRASANA</td>
-            <td>423.89</td>
-            <td>30</td>
-          </tr>
-          <tr>
-            <td>2554</td>
-            <td>MERMELADA DE SAUCO GR SIN T.A.C.C.</td>
-            <td>TERRASANA</td>
-            <td>529.22</td>
-            <td>15</td>
-          </tr>
-          <tr>
-            <td>3115</td>
-            <td>VINO ORGÁNICO MALBEC ROBLE 750 ML</td>
-            <td>TERRAVITA</td>
-            <td>806.25</td>
-            <td>12</td>
-          </tr>
-          <tr>
-            <td>5255</td>
-            <td>MAYONESA VEGANA SABOR ORIGINAL 352 GR</td>
-            <td>EGGLESS</td>
-            <td>181.34</td>
-            <td>50</td>
-          </tr>
-          <tr>
-            <td>2711</td>
-            <td>DÁTILES SIN CAROZO X 200 GRS PACK COMPOSTABLE</td>
-            <td>PLANTY</td>
-            <td>270.05</td>
-            <td>50</td>
-          </tr>
-          <tr>
-            <td>1544</td>
-            <td>JUGO Y PULPA DE ARANDANO X 500 ML SIN TACC</td>
-            <td>NATUFRESH</td>
-            <td>339.36</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <td>3555</td>
-            <td>TÉ PATAGONIA ROOIBOS 15 SAQ</td>
-            <td>INTI ZEN</td>
-            <td>325.98</td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td>3120</td>
-            <td>VINO ORGÁNICO CABERNET FRANC ROBLE 750 ML</td>
-            <td>TERRAVITA</td>
-            <td>802.15</td>
-            <td>12</td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
-    <br />
-
-    <footer class="page-footer #388e3c green darken-1">
+      </div>
+    </div>
+    <div class="footer-copyright">
       <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">
-              You can use rows and columns here to organize your footer content.
-            </p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
+        © 2022 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © 2022 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
-      </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
+
 </html>
