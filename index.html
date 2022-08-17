@@ -28,11 +28,31 @@
   </header>
   <main class="container">
     <h1 class="center-align">Productos Naturales</h1>
+    <h3>Desafio entregable - EVENTOS</h3>
+    <ul>
+      <li>Se conectaron con sus botones correspondientes las funciones de <em>agregarProducto</em> y
+        <em>borrarProducto</em>
+      </li>
+    </ul>
 
     <p id="parrafo-usuario"></p>
 
-    <h4>DESAFÍO COMPLEMENTARIO
-      Interactuar con HTML</h4>
+    <button id="btn-cargar-prod" class="waves-effect waves-light btn-large">Agregar Producto</button>
+    <button id="btn-borrar-prod" class="waves-effect waves-light btn-large #f44336 red">Quitar Producto</button>
+
+    <h3 class="center-align">Lista de productos</h3>
+    <table class="highlight light-green accent-2 z-depth-5">
+      <thead>
+        <th>codigo</th>
+        <th>nombre</th>
+        <th>marca</th>
+        <th>precio</th>
+        <th>stock</th>
+      </thead>
+      <tbody id="cuerpo-tabla">
+      </tbody>
+    </table>
+    <h5>Entregas anteriores</h5>
     <ol>
       <li>
         Función <em>ingresarTexto()</em> permite ingresar un texto
@@ -42,11 +62,6 @@
         Función <em>cargaTablaDeProductos</em> carga los productos desde
         JS -
       </li>
-      
-    </ol>
-    <h5>Entregas anteriores</h5>
-    
-    <ol>
       <li>
         Se agregó la linea <em>generadorAutomatico()</em> para cargar
         la lista de productos al iniciar la página.
@@ -98,19 +113,6 @@
         el importe total , las cuotas a pagar y el monto de cada una.
       </li>
     </ol>
-
-    <h3 class="center-align">Lista de productos</h3>
-    <table class="highlight light-green accent-2 z-depth-5">
-      <thead>
-        <th>codigo</th>
-        <th>nombre</th>
-        <th>marca</th>
-        <th>precio</th>
-        <th>stock</th>
-      </thead>
-      <tbody id="cuerpo-tabla">
-      </tbody>
-    </table>
   </main>
   <br />
 

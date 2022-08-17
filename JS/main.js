@@ -8,7 +8,17 @@ let acum = 0;
 let codigo = 1;
 const productos = [];
 const parrafoUsuario = document.getElementById("parrafo-usuario")
+const btnCargarProd = document.querySelector("#btn-cargar-prod")
+const btnBorrarProd = document.querySelector("#btn-borrar-prod")
+const cuerpoTabla = document.getElementById("cuerpo-tabla")
 
+btnCargarProd.addEventListener("click", () => {
+    agregarProducto()
+})
+
+btnBorrarProd.addEventListener("click", () => {
+    borrarProducto()
+})
 
 class Producto {
     constructor(codigo, nombre, marca, precio, stock) {
@@ -55,17 +65,6 @@ function calculaIntereses(impInic, cuotas, tasaInt) {
     // retorna: cuota neta + intereses * cantidad de cuotas
 }
 
-function agregarProductos() {
-    //debugger
-    let codigo = parseInt(prompt("Ingrese el código del producto a agregar: "))
-    let nombre = (prompt("Ingrese el nombre del producto: ")).toUpperCase()
-    let marca = (prompt("Ingrese la marca: ")).toUpperCase()
-    let precio = parseFloat(prompt("Ingresa el importe"))
-    let stock = parseInt(prompt("Ingrese el stock"))
-    productos.push(new Producto(codigo, nombre, marca, precio, stock))
-    console.table(productos)
-}
-
 function generadorAutomatico() {
     productos.push(new Producto(1221, 'ACEITE DE OLIVA EXTRA VIRGEN 500ML', 'TERRASANA', 732.15, 25));
     productos.push(new Producto(1231, 'SALSA DE TOMATE  500 ML SIN T.A.C.C.', 'TERRASANA', 423.89, 30));
@@ -79,7 +78,6 @@ function generadorAutomatico() {
 }
 
 generadorAutomatico()
-
 
 function buscarProducto() {
     //debugger
@@ -114,8 +112,8 @@ function ingresarTexto() {
     parrafoUsuario.className = "texto-ingresado"
 }
 
-function cargaTablaDeProductos(){
-    const cuerpoTabla = document.getElementById("cuerpo-tabla")
+function cargaTablaDeProductos() {
+    //const cuerpoTabla = document.getElementById("cuerpo-tabla")
     productos.forEach((producto) => {
         cuerpoTabla.innerHTML += `<tr>
                                     <td>${producto.codigo}</td>
@@ -126,8 +124,34 @@ function cargaTablaDeProductos(){
                                 </tr>`
     })
 }
-
 cargaTablaDeProductos()
 
 
+function agregarProducto() {
+    let codigoIng = parseInt(prompt("Ingrese el código del producto a agregar: "))
+   //debugger
+   let verifica = productos.find(element => element.codigo === codigoIng)
+   if (verifica === undefined) {
+        let nombre = (prompt("Ingrese el nombre del producto: ")).toUpperCase()
+        let marca = (prompt("Ingrese la marca: ")).toUpperCase()
+        let precio = parseFloat(prompt("Ingresa el importe"))
+        let stock = parseInt(prompt("Ingrese el stock"))
+        productos.unshift(new Producto(codigo, nombre, marca, precio, stock))
+        cuerpoTabla.innerHTML = ""
+        cargaTablaDeProductos()
+    } else {
+        alert("el código ya existe")
+    }
+}
 
+function borrarProducto() {
+    produAbor = parseInt(prompt("Ingresa el código del producto a quitar"))
+    let indice = productos.findIndex(element => element.codigo === produAbor)
+    if (indice != -1) {
+        productos.splice(indice, 1)
+        cuerpoTabla.innerHTML = ""
+        cargaTablaDeProductos()
+    } else {
+        alert("El producto no existe")
+    }
+}
