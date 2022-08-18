@@ -129,7 +129,7 @@ cargaTablaDeProductos()
 
 function agregarProducto() {
     let codigo = parseInt(prompt("Ingrese el código del producto a agregar: "))
-   debugger
+   //debugger
    let verifica = productos.find(element => element.codigo === codigo)
    if (verifica === undefined) {
         let nombre = (prompt("Ingrese el nombre del producto: ")).toUpperCase()
