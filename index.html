@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./CSS/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script defer src="./JS/variables.js"></script>
   <script defer src="./JS/main.js"></script>
   <title>Desafio Complementario clase 8 JS</title>
 </head>
@@ -28,91 +29,23 @@
   </header>
   <main class="container">
     <h1 class="center-align">Productos Naturales</h1>
-    <h3>Desafio entregable - EVENTOS</h3>
-    <ul>
-      <li>Se conectaron con sus botones correspondientes las funciones de <em>agregarProducto</em> y
-        <em>borrarProducto</em>
-      </li>
-    </ul>
 
-    <p id="parrafo-usuario"></p>
+    <div id="cardProducto" class="row">
+    </div>
+ 
 
-    <button id="btn-cargar-prod" class="waves-effect waves-light btn-large">Agregar Producto</button>
-    <button id="btn-borrar-prod" class="waves-effect waves-light btn-large #f44336 red">Quitar Producto</button>
-
-    <h3 class="center-align">Lista de productos</h3>
-    <table class="highlight light-green accent-2 z-depth-5">
+    <h3 class="center-align">Carrito de compras</h3>
+    <table class="highlight lime accent-2 z-depth-5">
       <thead>
-        <th>codigo</th>
+        <!-- <th>codigo</th> -->
         <th>nombre</th>
         <th>marca</th>
         <th>precio</th>
-        <th>stock</th>
+        <!-- <th>can</th> -->
       </thead>
       <tbody id="cuerpo-tabla">
       </tbody>
     </table>
-    <h5>Entregas anteriores</h5>
-    <ol>
-      <li>
-        Función <em>ingresarTexto()</em> permite ingresar un texto
-        al html desde consola
-      </li>
-      <li>
-        Función <em>cargaTablaDeProductos</em> carga los productos desde
-        JS -
-      </li>
-      <li>
-        Se agregó la linea <em>generadorAutomatico()</em> para cargar
-        la lista de productos al iniciar la página.
-      </li>
-      <li>
-        Función <em class="orange-text text-accent-3">buscarProducto()</em>:
-        pide al usuario un producto por nombre e itera sobre el array
-        'productos' utilizando 'filter' e 'includes' para devoler todos los
-        productos que contengan lo ingresado.
-      </li>
-      <li>
-        Función
-        <em class="orange-text text-accent-3">calculaCompra()</em>: solicita
-        código del producto y las cantidades, se va mostrando cada producto elegido, la
-        cantidad y el subtotal por producto.
-        Al ingresar '0' como código de producto
-        se finaliza la compra y se muestra el importe total.
-        Si el usuario ingresa un código que no existe se muestra un 'alert' y vuelve
-        a pedir otro código.
-      </li>
-      <li>
-        Se agregó una tabla de los productos de forma estática en la página principal.
-      </li>
-      <li>
-        Se incorpora un array de objetos llamado
-        <em class="blue-text bold">productos</em>.
-      </li>
-      <li>
-        Con la función
-        <em class="orange-text text-accent-3">generadorAutomatico()</em> se
-        cargan los productos teniendo como constructor la clase
-        <em class="blue-text bold">Producto</em>.
-      </li>
-      <li>
-        <em class="blue-text bold">Producto</em> incorpora dos métodos,
-        <em>precioConIva</em> para calcular el precio final y
-        <em>restaStock</em> para descontar unidades del stock.
-      </li>
-      <li>
-        La función <em class="orange-text text-accent-3">agregarProductos()</em> permite
-        agregar mas productos en la tabla.
-      </li>
-      <li>
-        La función
-        <em class="orange-text text-accent-3">calculaCuotas()</em> calcula el
-        importe a pagar sobre un valor ya definido consulta al usuario en
-        cuantas cuotas quiere abonar, e invocando a la función
-        <em class="orange-text text-accent-3">calculaInteres()</em>, devuelve
-        el importe total , las cuotas a pagar y el monto de cada una.
-      </li>
-    </ol>
   </main>
   <br />
 

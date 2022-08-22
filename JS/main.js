@@ -1,42 +1,13 @@
 
-const TCEA = 0.85;
-const IVA = 1.21;
-let importeInicial = 5500;
-let precioFinal = 0;
-let cuotasFinac = 0;
-let acum = 0;
-let codigo = 1;
-const productos = [];
-const parrafoUsuario = document.getElementById("parrafo-usuario")
-const btnCargarProd = document.querySelector("#btn-cargar-prod")
-const btnBorrarProd = document.querySelector("#btn-borrar-prod")
-const cuerpoTabla = document.getElementById("cuerpo-tabla")
 
-btnCargarProd.addEventListener("click", () => {
-    agregarProducto()
-})
+// btnCargarProd.addEventListener("click", () => {
+// agregarProducto()
+// })
 
-btnBorrarProd.addEventListener("click", () => {
-    borrarProducto()
-})
+// btnBorrarProd.addEventListener("click", () => {
+// borrarProducto()
+// })
 
-class Producto {
-    constructor(codigo, nombre, marca, precio, stock) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.marca = marca;
-        this.precio = precio;
-        this.stock = stock;
-    }
-    precioConIva() {
-        let precioFinal = (this.precio * IVA).toFixed(2)
-        console.log(precioFinal)
-    }
-    restaStock(unidades) {
-        this.stock = this.stock - unidades
-        console.log("del código", this.codigo, "quedan ", this.stock, " unidades")
-    }
-}
 
 
 function calculaCuotas() {
@@ -65,19 +36,6 @@ function calculaIntereses(impInic, cuotas, tasaInt) {
     // retorna: cuota neta + intereses * cantidad de cuotas
 }
 
-function generadorAutomatico() {
-    productos.push(new Producto(1221, 'ACEITE DE OLIVA EXTRA VIRGEN 500ML', 'TERRASANA', 732.15, 25));
-    productos.push(new Producto(1231, 'SALSA DE TOMATE  500 ML SIN T.A.C.C.', 'TERRASANA', 423.89, 30));
-    productos.push(new Producto(2554, 'MERMELADA DE SAUCO GR SIN T.A.C.C.', 'TERRASANA', 529.22, 15));
-    productos.push(new Producto(3115, 'VINO ORGÁNICO MALBEC ROBLE 750 ML', 'TERRAVITA', 806.25, 12));
-    productos.push(new Producto(5255, 'MAYONESA VEGANA SABOR ORIGINAL 352 GR', 'EGGLESS', 181.34, 50));
-    productos.push(new Producto(2711, 'DÁTILES SIN CAROZO X 200 GRS PACK COMPOSTABLE', 'PLANTY', 270.05, 50));
-    productos.push(new Producto(1544, 'JUGO Y PULPA DE ARANDANO X 500 ML SIN TACC', 'NATUFRESH', 339.36, 25));
-    productos.push(new Producto(3555, 'TÉ PATAGONIA ROOIBOS 15 SAQ', 'INTI ZEN', 325.98, 10));
-    productos.push(new Producto(3120, 'VINO ORGÁNICO CABERNET FRANC ROBLE 750 ML', 'TERRAVITA', 802.15, 12))
-}
-
-generadorAutomatico()
 
 function buscarProducto() {
     //debugger
@@ -112,26 +70,49 @@ function ingresarTexto() {
     parrafoUsuario.className = "texto-ingresado"
 }
 
-function cargaTablaDeProductos() {
-    //const cuerpoTabla = document.getElementById("cuerpo-tabla")
+// function cargaTablaDeProductos() {
+// productos.forEach((producto) => {
+// cuerpoTabla.innerHTML += `<tr>
+// <td>${producto.codigo}</td>
+// <td>${producto.nombre}</td>
+// <td>${producto.marca}</td>
+// <td>${producto.precio}</td>
+// <td>${producto.stock}</td>
+// </tr>`
+// })
+// }
+// cargaTablaDeProductos()
+
+function cargaCardProductos() {
     productos.forEach((producto) => {
-        cuerpoTabla.innerHTML += `<tr>
-                                    <td>${producto.codigo}</td>
-                                    <td>${producto.nombre}</td>
-                                    <td>${producto.marca}</td>
-                                    <td>${producto.precio}</td>
-                                    <td>${producto.stock}</td>
-                                </tr>`
+        cardProducto.innerHTML += `<div class="class col s4">
+                                     <div class="class card light-green accent-2">
+                                       <div class="class card-image">
+                                         <img src="./Assets/images/stevia.jpg" alt="aceite">
+                                       </div>
+                                       <div class="class card-content">
+                                         <p class="card-title">${producto.nombre}</p>
+                                         <p> ${producto.marca}</p>
+                                         <p class="center-align"><em>$${producto.precio}</em></p>
+                                         <p>Lorem ipsum dolor sit amet consectetur sit amet consectetur sit amet consectetur </p>
+                                       </div>
+                                       <div class="card-action center-align">
+                                          <button id="btn-cargar-prod" class="waves-effect waves-light btn">Agregar al carrito</button>
+                                          <button id="btn-borrar-prod" class="waves-effect waves-light btn red">Quitar </button>                
+                                       </div>
+                                     </div>
+                                    </div>`
     })
 }
-cargaTablaDeProductos()
+
+cargaCardProductos()
 
 
 function agregarProducto() {
     let codigo = parseInt(prompt("Ingrese el código del producto a agregar: "))
-   //debugger
-   let verifica = productos.find(element => element.codigo === codigo)
-   if (verifica === undefined) {
+    //debugger
+    let verifica = productos.find(element => element.codigo === codigo)
+    if (verifica === undefined) {
         let nombre = (prompt("Ingrese el nombre del producto: ")).toUpperCase()
         let marca = (prompt("Ingrese la marca: ")).toUpperCase()
         let precio = parseFloat(prompt("Ingresa el importe"))
