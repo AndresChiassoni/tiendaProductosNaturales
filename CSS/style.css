@@ -28,3 +28,12 @@ p {
     object-fit:contain;
 }
 
+body {
+    display: grid;
+    /*corrige posición del footer siempre abajo*/
+    min-height: 100vh;
+    /*idem*/
+    /* grid-template-rows: auto auto 1fr auto; */
+    /*idem*/
+}
+

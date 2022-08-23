@@ -1,74 +1,88 @@
 
 
-// btnCargarProd.addEventListener("click", () => {
-// agregarProducto()
-// })
 
-// btnBorrarProd.addEventListener("click", () => {
-// borrarProducto()
-// })
-
-
-
-function calculaCuotas() {
-    alert("El importe de su compra es de $" + importeInicial.toFixed(2))
-    for (i = 1; i < 3; i++) {
-        let cuotasFinac = parseInt(prompt("Ingrese en cuántas cuotas desea pagar '1 a 12'"))
-        if (cuotasFinac < 1 || cuotasFinac > 12) {
-            alert("no hay financiación en esas cuotas, intente de nuevo")
-        }
-        else if (cuotasFinac == 1) {
-            alert("El importe a pagar no tiene intereses")
-            i = 3
-        }
-        else {
-            let precioFinal = calculaIntereses(importeInicial, cuotasFinac, TCEA)
-            alert("El importe Total es de $" + (precioFinal.toFixed(2)) + " a pagar en " +
-                cuotasFinac +
-                " cuotas de $" + ((precioFinal / cuotasFinac).toFixed(2)))
-            i = 3
-        }
-    }
+function generaCardProductos() {
+    productos.forEach((producto) => {
+        cardProducto.innerHTML += `<div class="class col s4">
+                                     <div class="class card light-green accent-2">
+                                       <div class="class card-image">
+                                         <img src="./Assets/images/stevia.jpg" alt="aceite">
+                                       </div>
+                                       <div class="class card-content">
+                                         <p class="card-title">${producto.nombre}</p>
+                                         <p> ${producto.marca}</p>
+                                         <p class="center-align"><em>$${producto.precio}</em></p>
+                                         <p>Lorem ipsum dolor sit amet consectetur sit amet consectetur sit amet consectetur </p>
+                                       </div>
+                                       <div class="card-action center-align">
+                                          <button id="btn-cargar-${producto.codigo}" class="waves-effect waves-light btn">Agregar al carrito</button>
+                                          <button id="btn-borrar-${producto.codigo}" class="waves-effect waves-light btn red">Quitar </button>                
+                                       </div>
+                                     </div>
+                                    </div>`
+    });
+    agregarFuncionalidad();
 }
 
-function calculaIntereses(impInic, cuotas, tasaInt) {
-    return (((impInic / cuotas) + (tasaInt / 12 * impInic)) * cuotas)
-    // retorna: cuota neta + intereses * cantidad de cuotas
+generaCardProductos()
+
+function agregarFuncionalidad() {
+    productos.forEach((producto) => {
+        document
+                .querySelector(`#btn-cargar-${producto.codigo}`)
+                .addEventListener("click", () => {
+                 carrito.push(producto)           
+                 });
+    });
+    
 }
 
 
-function buscarProducto() {
-    //debugger
-    let product = (prompt("Ingresa el producto a buscar")).toUpperCase()
-    let resultado = productos.filter(elemento => elemento.nombre.includes(product))
-    console.table(resultado)
+function cargaTablaDeCarrito() {
+        carrito.forEach((producto) => {
+        cuerpoTabla.innerHTML += `<tr>
+                                     <td>${producto.nombre}</td>
+                                     <td>${producto.marca}</td>
+                                     <td>${producto.precio}</td>
+                                  </tr>`
+    });
 }
+cargaTablaDeCarrito()
 
-function calculaCompra() {
-    acum = 0;
-    do {
-        let codigo = parseInt(prompt("Ingresa el código del producto ('0' termina compra): "))
-        if (codigo == 0) {
-            break;
-        }
-        let resultado = productos.find(elemento => elemento.codigo === codigo);
-        if (resultado === undefined) {
-            alert("El codigo no existe!")
-        } else {
-            let cantidad = parseInt(prompt("Ingresa la cantidad"));
-            console.log("Producto:", (resultado.nombre), " - precio unitario $", (resultado.precio),
-                "- cantidad:", cantidad, " subtotal $", (resultado.precio * cantidad).toFixed(2))
-            acum += (resultado.precio) * cantidad;
-        }
-    } while (codigo != 0);
 
-    console.log("Su compra TOTAL es de $", acum);
-}
 
-function ingresarTexto() {
-    parrafoUsuario.innerText = prompt("Ingrese un texto a la página").toUpperCase()
-    parrafoUsuario.className = "texto-ingresado"
-}
+
+// function agregarProducto() {
+    // 
+    // let codigo = parseInt(prompt("Ingrese el código del producto a agregar: "))
+    
+    // let verifica = productos.find(element => element.codigo === codigo)
+    // if (verifica === undefined) {
+        // let nombre = (prompt("Ingrese el nombre del producto: ")).toUpperCase()
+        // let marca = (prompt("Ingrese la marca: ")).toUpperCase()
+        // let precio = parseFloat(prompt("Ingresa el importe"))
+        // let stock = parseInt(prompt("Ingrese el stock"))
+        // productos.unshift(new Producto(codigo, nombre, marca, precio, stock))
+        // cuerpoTabla.innerHTML = ""
+        // cargaTablaDeProductos()
+    // } else {
+        // alert("el código ya existe")
+    // }
+// }
+// 
+// function borrarProducto() {
+    // produAbor = parseInt(prompt("Ingresa el código del producto a quitar"))
+    // let indice = productos.findIndex(element => element.codigo === produAbor)
+    // if (indice != -1) {
+        // productos.splice(indice, 1)
+        // cuerpoTabla.innerHTML = ""
+        // cargaTablaDeProductos()
+    // } else {
+        // alert("El producto no existe")
+    // }
+// }
+
+
 
 // function cargaTablaDeProductos() {
 // productos.forEach((producto) => {
@@ -83,56 +97,62 @@ function ingresarTexto() {
 // }
 // cargaTablaDeProductos()
 
-function cargaCardProductos() {
-    productos.forEach((producto) => {
-        cardProducto.innerHTML += `<div class="class col s4">
-                                     <div class="class card light-green accent-2">
-                                       <div class="class card-image">
-                                         <img src="./Assets/images/stevia.jpg" alt="aceite">
-                                       </div>
-                                       <div class="class card-content">
-                                         <p class="card-title">${producto.nombre}</p>
-                                         <p> ${producto.marca}</p>
-                                         <p class="center-align"><em>$${producto.precio}</em></p>
-                                         <p>Lorem ipsum dolor sit amet consectetur sit amet consectetur sit amet consectetur </p>
-                                       </div>
-                                       <div class="card-action center-align">
-                                          <button id="btn-cargar-prod" class="waves-effect waves-light btn">Agregar al carrito</button>
-                                          <button id="btn-borrar-prod" class="waves-effect waves-light btn red">Quitar </button>                
-                                       </div>
-                                     </div>
-                                    </div>`
-    })
-}
+// function calculaCuotas() {
+    // alert("El importe de su compra es de $" + importeInicial.toFixed(2))
+    // for (i = 1; i < 3; i++) {
+        // let cuotasFinac = parseInt(prompt("Ingrese en cuántas cuotas desea pagar '1 a 12'"))
+        // if (cuotasFinac < 1 || cuotasFinac > 12) {
+            // alert("no hay financiación en esas cuotas, intente de nuevo")
+        // }
+        // else if (cuotasFinac == 1) {
+            // alert("El importe a pagar no tiene intereses")
+            // i = 3
+        // }
+        // else {
+            // let precioFinal = calculaIntereses(importeInicial, cuotasFinac, TCEA)
+            // alert("El importe Total es de $" + (precioFinal.toFixed(2)) + " a pagar en " +
+                // cuotasFinac +
+                // " cuotas de $" + ((precioFinal / cuotasFinac).toFixed(2)))
+            // i = 3
+        // }
+    // }
+//}
 
-cargaCardProductos()
+// function calculaIntereses(impInic, cuotas, tasaInt) {
+    // return (((impInic / cuotas) + (tasaInt / 12 * impInic)) * cuotas)
+    // retorna: cuota neta + intereses * cantidad de cuotas
+// }
+// 
+// 
+// function buscarProducto() {
+    // debugger
+    // let product = (prompt("Ingresa el producto a buscar")).toUpperCase()
+    // let resultado = productos.filter(elemento => elemento.nombre.includes(product))
+    // console.table(resultado)
+// }
+// 
+// function calculaCompra() {
+    // acum = 0;
+    // do {
+        // let codigo = parseInt(prompt("Ingresa el código del producto ('0' termina compra): "))
+        // if (codigo == 0) {
+            // break;
+        // }
+        // let resultado = productos.find(elemento => elemento.codigo === codigo);
+        // if (resultado === undefined) {
+            // alert("El codigo no existe!")
+        // } else {
+            // let cantidad = parseInt(prompt("Ingresa la cantidad"));
+            // console.log("Producto:", (resultado.nombre), " - precio unitario $", (resultado.precio),
+                // "- cantidad:", cantidad, " subtotal $", (resultado.precio * cantidad).toFixed(2))
+            // acum += (resultado.precio) * cantidad;
+        // }
+    // } while (codigo != 0);
 
+    // console.log("Su compra TOTAL es de $", acum);
+// }
 
-function agregarProducto() {
-    let codigo = parseInt(prompt("Ingrese el código del producto a agregar: "))
-    //debugger
-    let verifica = productos.find(element => element.codigo === codigo)
-    if (verifica === undefined) {
-        let nombre = (prompt("Ingrese el nombre del producto: ")).toUpperCase()
-        let marca = (prompt("Ingrese la marca: ")).toUpperCase()
-        let precio = parseFloat(prompt("Ingresa el importe"))
-        let stock = parseInt(prompt("Ingrese el stock"))
-        productos.unshift(new Producto(codigo, nombre, marca, precio, stock))
-        cuerpoTabla.innerHTML = ""
-        cargaTablaDeProductos()
-    } else {
-        alert("el código ya existe")
-    }
-}
-
-function borrarProducto() {
-    produAbor = parseInt(prompt("Ingresa el código del producto a quitar"))
-    let indice = productos.findIndex(element => element.codigo === produAbor)
-    if (indice != -1) {
-        productos.splice(indice, 1)
-        cuerpoTabla.innerHTML = ""
-        cargaTablaDeProductos()
-    } else {
-        alert("El producto no existe")
-    }
-}
+// function ingresarTexto() {
+    // parrafoUsuario.innerText = prompt("Ingrese un texto a la página").toUpperCase()
+    // parrafoUsuario.className = "texto-ingresado"
+// }

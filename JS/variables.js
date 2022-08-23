@@ -6,10 +6,11 @@ let cuotasFinac = 0;
 let acum = 0;
 let codigo = 1;
 const productos = [];
-const parrafoUsuario = document.getElementById("parrafo-usuario")
-const btnCargarProd = document.querySelector("#btn-cargar-prod")
-const btnBorrarProd = document.querySelector("#btn-borrar-prod")
-const cuerpoTabla = document.getElementById("cuerpo-tabla")
+const carrito = [];
+// const parrafoUsuario = document.getElementById("parrafo-usuario")
+//const btnCargarProd = document.querySelector("button")
+//const btnBorrarProd = document.querySelector("button")
+const cuerpoTabla = document.querySelector("#cuerpoTabla")
 const cardProducto = document.getElementById("cardProducto")
 
 class Producto {
