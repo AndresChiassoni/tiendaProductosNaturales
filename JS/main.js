@@ -12,7 +12,6 @@ function generaCardProductos() {
                                          <p class="card-title">${producto.nombre}</p>
                                          <p> ${producto.marca}</p>
                                          <p class="center-align"><em>$${producto.precio}</em></p>
-                                         <p>Lorem ipsum dolor sit amet consectetur sit amet consectetur sit amet consectetur </p>
                                        </div>
                                        <div class="card-action center-align">
                                           <button id="btn-cargar-${producto.codigo}" class="waves-effect waves-light btn">Agregar al carrito</button>
