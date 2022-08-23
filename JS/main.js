@@ -31,7 +31,9 @@ function agregarFuncionalidad() {
         document
                 .querySelector(`#btn-cargar-${producto.codigo}`)
                 .addEventListener("click", () => {
-                 carrito.push(producto)           
+                    carrito.push(producto)
+                    cuerpoTabla.innerHTML = ""
+                    cargaTablaDeCarrito()          
                  });
     });
     
@@ -41,13 +43,30 @@ function agregarFuncionalidad() {
 function cargaTablaDeCarrito() {
         carrito.forEach((producto) => {
         cuerpoTabla.innerHTML += `<tr>
+                                     <td>${producto.codigo}</td>
                                      <td>${producto.nombre}</td>
                                      <td>${producto.marca}</td>
                                      <td>${producto.precio}</td>
                                   </tr>`
+
     });
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    borrarProducto()
 }
-cargaTablaDeCarrito()
+
+function borrarProducto() {
+    carrito.forEach((producto) => {
+        document
+            .querySelector(`#btn-borrar-${producto.codigo}`)
+            .addEventListener("click", () => {
+                carrito = carrito.filter(productoFiltrado => productoFiltrado.codigo !== producto.codigo);
+                cuerpoTabla.innerHTML = ""
+                cargaTablaDeCarrito()
+             });
+        
+    })
+
+}
 
 
 

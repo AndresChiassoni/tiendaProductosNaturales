@@ -5,13 +5,16 @@ let precioFinal = 0;
 let cuotasFinac = 0;
 let acum = 0;
 let codigo = 1;
+
+
 const productos = [];
-const carrito = [];
-// const parrafoUsuario = document.getElementById("parrafo-usuario")
-//const btnCargarProd = document.querySelector("button")
-//const btnBorrarProd = document.querySelector("button")
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []; 
+
+
+
 const cuerpoTabla = document.querySelector("#cuerpoTabla")
 const cardProducto = document.getElementById("cardProducto")
+
 
 class Producto {
     constructor(codigo, nombre, marca, precio, stock) {
