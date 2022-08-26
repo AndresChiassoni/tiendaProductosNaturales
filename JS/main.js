@@ -1,5 +1,4 @@
-
-
+generaCardProductos()
 
 function generaCardProductos() {
     productos.forEach((producto) => {
@@ -18,39 +17,52 @@ function generaCardProductos() {
                                           <button id="btn-borrar-${producto.codigo}" class="waves-effect waves-light btn red">Quitar </button>                
                                        </div>
                                      </div>
-                                    </div>`
+                                    </div>`                                 
     });
-    agregarFuncionalidad();
+    cargaTablaDeCarrito();
+    funcionalidadBtnAgregar();
 }
 
-generaCardProductos()
+function cargaTablaDeCarrito() {
+    total = 0
+    carrito.forEach((producto) => {
+        total += producto.subTotal
+        cuerpoTabla.innerHTML += `<tr>
+                                 <td>${producto.codigo}</td>
+                                 <td>${producto.nombre}</td>
+                                 <td>${producto.marca}</td>
+                                 <td>${producto.precio}</td>
+                                 <td>${producto.cantidad}</td>
+                                 <td>${producto.subTotal.toFixed(2)}</td>
+                              </tr>`
+    });
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    muestraTotal.innerHTML = `<h3>TOTAL $ ${total.toFixed(2)}</h3>`
+    borrarProducto()
+}
 
-function agregarFuncionalidad() {
+function funcionalidadBtnAgregar() {
     productos.forEach((producto) => {
         document
                 .querySelector(`#btn-cargar-${producto.codigo}`)
                 .addEventListener("click", () => {
-                    carrito.push(producto)
+                    agregaProductoAlCarro(producto)
                     cuerpoTabla.innerHTML = ""
-                    cargaTablaDeCarrito()          
+                    cargaTablaDeCarrito()
                  });
-    });
-    
+    });  
 }
 
-
-function cargaTablaDeCarrito() {
-        carrito.forEach((producto) => {
-        cuerpoTabla.innerHTML += `<tr>
-                                     <td>${producto.codigo}</td>
-                                     <td>${producto.nombre}</td>
-                                     <td>${producto.marca}</td>
-                                     <td>${producto.precio}</td>
-                                  </tr>`
-
-    });
-    localStorage.setItem("carrito", JSON.stringify(carrito))
-    borrarProducto()
+function agregaProductoAlCarro(producto) {
+    let control = carrito.includes(producto) 
+//    control ? producto.cantidad ++ : producto.cantidad = 1 , carrito.push(producto); 
+        if (control) {
+            producto.cantidad ++
+        } else {
+            producto.cantidad = 1
+            carrito.push(producto);
+        }
+    producto.subTotal = producto.precio * producto.cantidad
 }
 
 function borrarProducto() {
@@ -66,6 +78,10 @@ function borrarProducto() {
     })
 
 }
+
+// function muestraTotal() {
+    // muestraTotal.innerHTML = `<p>${total}</p>`
+// }
 
 
 
