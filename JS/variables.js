@@ -1,20 +1,9 @@
-// const TCEA = 0.85;
-// const IVA = 1.21;
-// let importeInicial = 5500;
-// let precioFinal = 0;
-// let cuotasFinac = 0;
-// let acum = 0;
-let codigo = 1;
 let total = 0;
-
-
 const productos = [];
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []; // genera carrito si no estaba en localStorage
 const cuerpoTabla = document.querySelector("#cuerpoTabla")
 const cardProducto = document.getElementById("cardProducto")
 const muestraTotal = document.getElementById("totalCompra")
-
 
 class Producto {
     constructor(codigo, nombre, marca, precio, stock) {

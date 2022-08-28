@@ -1,4 +1,7 @@
-generaCardProductos()
+generaCardProductos();
+cargaTablaDeCarrito();
+funcionalidadBtnAgregar();
+
 
 function generaCardProductos() {
     productos.forEach((producto) => {
@@ -14,13 +17,11 @@ function generaCardProductos() {
                                        </div>
                                        <div class="card-action center-align">
                                           <button id="btn-cargar-${producto.codigo}" class="waves-effect waves-light btn">Agregar al carrito</button>
-                                          <button id="btn-borrar-${producto.codigo}" class="waves-effect waves-light btn red">Quitar </button>                
+                                          <button id="btn-borrar-${producto.codigo}" class="waves-effect waves-light btn red">Quitar </button>
                                        </div>
                                      </div>
-                                    </div>`                                 
+                                    </div>`
     });
-    cargaTablaDeCarrito();
-    funcionalidadBtnAgregar();
 }
 
 function cargaTablaDeCarrito() {
@@ -44,24 +45,19 @@ function cargaTablaDeCarrito() {
 function funcionalidadBtnAgregar() {
     productos.forEach((producto) => {
         document
-                .querySelector(`#btn-cargar-${producto.codigo}`)
-                .addEventListener("click", () => {
+            .querySelector(`#btn-cargar-${producto.codigo}`)
+            .addEventListener("click", () => {
                     agregaProductoAlCarro(producto)
                     cuerpoTabla.innerHTML = ""
                     cargaTablaDeCarrito()
-                 });
-    });  
+                });
+    });
 }
 
 function agregaProductoAlCarro(producto) {
-    let control = carrito.includes(producto) 
-//    control ? producto.cantidad ++ : producto.cantidad = 1 , carrito.push(producto); 
-        if (control) {
-            producto.cantidad ++
-        } else {
-            producto.cantidad = 1
-            carrito.push(producto);
-        }
+    let existe = (carrito.includes(producto))
+    existe ? producto.cantidad++ :
+        (producto.cantidad = 1, carrito.push(producto))
     producto.subTotal = producto.precio * producto.cantidad
 }
 
@@ -73,18 +69,16 @@ function borrarProducto() {
                 carrito = carrito.filter(productoFiltrado => productoFiltrado.codigo !== producto.codigo);
                 cuerpoTabla.innerHTML = ""
                 cargaTablaDeCarrito()
-             });
-        
+            });
     })
-
 }
+
+
+
 
 // function muestraTotal() {
     // muestraTotal.innerHTML = `<p>${total}</p>`
 // }
-
-
-
 
 // function agregarProducto() {
     // 
@@ -115,8 +109,6 @@ function borrarProducto() {
         // alert("El producto no existe")
     // }
 // }
-
-
 
 // function cargaTablaDeProductos() {
 // productos.forEach((producto) => {
