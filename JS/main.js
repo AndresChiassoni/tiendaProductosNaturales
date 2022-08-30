@@ -1,8 +1,3 @@
-generaCardProductos();
-cargaTablaDeCarrito();
-funcionalidadBtnAgregar();
-
-
 function generaCardProductos() {
     productos.forEach((producto) => {
         cardProducto.innerHTML += `<div class="class col s4">
@@ -22,7 +17,10 @@ function generaCardProductos() {
                                      </div>
                                     </div>`
     });
+    agregarProducto();
 }
+
+generaCardProductos();
 
 function cargaTablaDeCarrito() {
     total = 0
@@ -39,27 +37,25 @@ function cargaTablaDeCarrito() {
     });
     localStorage.setItem("carrito", JSON.stringify(carrito))
     muestraTotal.innerHTML = `<h3>TOTAL $ ${total.toFixed(2)}</h3>`
-    borrarProducto()
+    borrarProducto() 
 }
 
-function funcionalidadBtnAgregar() {
+cargaTablaDeCarrito();
+
+function agregarProducto() {
     productos.forEach((producto) => {
         document
             .querySelector(`#btn-cargar-${producto.codigo}`)
             .addEventListener("click", () => {
-                    agregaProductoAlCarro(producto)
-                    cuerpoTabla.innerHTML = ""
-                    cargaTablaDeCarrito()
-                });
+                let existe = (carrito.includes(producto))
+                existe ? producto.cantidad++ :
+                    (producto.cantidad = 1, carrito.push(producto))
+                producto.subTotal = producto.precio * producto.cantidad
+                cuerpoTabla.innerHTML = ""
+                cargaTablaDeCarrito()
+                sAlertAgredado()
+            });
     });
-}
-
-function agregaProductoAlCarro(producto) {
-    sAlertAgredado()
-    let existe = (carrito.includes(producto))
-    existe ? producto.cantidad++ :
-        (producto.cantidad = 1, carrito.push(producto))
-    producto.subTotal = producto.precio * producto.cantidad
 }
 
 function borrarProducto() {
@@ -80,8 +76,8 @@ function borrarProducto() {
 
 const sAlertAgredado = ()=> {
     Swal.fire({
-        title: 'AGREDADO!',
-        text: 'gracias!!',
+        title: 'AGREDADO Gracias!!',
+        // text: 'gracias!!',
         toast: true,
         position: 'top-end',
         icon: 'success',
@@ -215,4 +211,12 @@ const sAlertQuitado = ()=> {
 // function ingresarTexto() {
     // parrafoUsuario.innerText = prompt("Ingrese un texto a la página").toUpperCase()
     // parrafoUsuario.className = "texto-ingresado"
+// }
+
+// function agregaProductoAlCarro(producto) {
+    // let existe = (carrito.includes(producto))
+    // existe ? producto.cantidad++ :
+        // (producto.cantidad = 1, carrito.push(producto))
+    // producto.subTotal = producto.precio * producto.cantidad
+    // sAlertAgredado()
 // }
