@@ -1,6 +1,6 @@
 function generaCardProductos() {
     productos.forEach((producto) => {
-        cardProducto.innerHTML += `<div class="class col s4">
+        cardProducto.innerHTML += `<div class="col l4 m6 s12">
                                      <div class="class card light-green accent-2">
                                        <div class="class card-image">
                                          <img src="./Assets/images/stevia.jpg" alt="aceite">
@@ -26,14 +26,14 @@ function cargaTablaDeCarrito() {
     total = 0
     carrito.forEach((producto) => {
         total += producto.subTotal
+        // <td>${producto.codigo}</td>
+        // <td>${producto.marca}</td>
         cuerpoTabla.innerHTML += `<tr>
-                                 <td>${producto.codigo}</td>
                                  <td>${producto.nombre}</td>
-                                 <td>${producto.marca}</td>
-                                 <td>${producto.precio}</td>
-                                 <td>${producto.cantidad}</td>
-                                 <td>${producto.subTotal.toFixed(2)}</td>
-                                 <td><button id="btn-borrar-${producto.codigo}" class="waves-effect
+                                 <td class="center-align">${producto.precio}</td>
+                                 <td class="center-align">${producto.cantidad}</td>
+                                 <td class="center-align">${producto.subTotal.toFixed(2)}</td>
+                                 <td class="center-align"><button id="btn-borrar-${producto.codigo}" class="waves-effect
                                  waves-light btn red">Quitar </button></td>
                               </tr>`
     });
