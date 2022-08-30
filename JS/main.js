@@ -53,7 +53,7 @@ function agregarProducto() {
                 producto.subTotal = producto.precio * producto.cantidad
                 cuerpoTabla.innerHTML = ""
                 cargaTablaDeCarrito()
-                sAlertAgredado()
+                sAlert ('AGREDADO Gracias!!','success','#eeff41')
             });
     });
 }
@@ -68,43 +68,55 @@ function borrarProducto() {
                     (carrito = carrito.filter(productoFiltrado => productoFiltrado.codigo !== producto.codigo),
                     cuerpoTabla.innerHTML = "",
                     cargaTablaDeCarrito(),
-                    sAlertQuitado())
+                    sAlert('BORRADO!', 'warning', '#ff3d00'))
             });
     })
 }
 
-
-const sAlertAgredado = ()=> {
+const sAlert =(mensaje, icono, colorFondo)=> {
     Swal.fire({
-        title: 'AGREDADO Gracias!!',
-        // text: 'gracias!!',
+        title: mensaje, 
         toast: true,
         position: 'top-end',
-        icon: 'success',
+        icon: icono,
         showConfirmButton: false,
-        background:'#eeff41',
+        background: colorFondo,
         color: 'black',
         timer: 1000
       })
 }
 
-const sAlertQuitado = ()=> {
-    Swal.fire({
-        title: 'BORRADO!',
+// const sAlertAgredado = ()=> {
+    // Swal.fire({
+        // title: 'AGREDADO Gracias!!',
         // text: 'gracias!!',
-        toast: true,
-        position: 'top-end',
-        icon: 'success',
-        showConfirmButton: false,
-        background:'#ff3d00',
-        color: 'black',
-        timer: 1000
-      })
-}
-
-
-
-
+        // toast: true,
+        // position: 'top-end',
+        // icon: 'success',
+        // showConfirmButton: false,
+        // background:'#eeff41',
+        // color: 'black',
+        // timer: 1000
+    //   })
+// }
+// 
+// const sAlertQuitado = ()=> {
+    // Swal.fire({
+        // title: 'BORRADO!',
+        // text: 'gracias!!',
+        // toast: true,
+        // position: 'top-end',
+        // icon: 'worning',
+        // showConfirmButton: false,
+        // background:'#ff3d00',
+        // color: 'black',
+        // timer: 1000
+    //   })
+// }
+// 
+// 
+// 
+// 
 
 // function muestraTotal() {
     // muestraTotal.innerHTML = `<p>${total}</p>`
