@@ -97,7 +97,7 @@ const sAlertQuitado = ()=> {
         title: 'BORRADO!',
         // text: 'gracias!!',
         toast: true,
-        position: 'top-start',
+        position: 'top-end',
         icon: 'success',
         showConfirmButton: false,
         background:'#ff3d00',
