@@ -55,6 +55,7 @@ function funcionalidadBtnAgregar() {
 }
 
 function agregaProductoAlCarro(producto) {
+    sAlertAgredado()
     let existe = (carrito.includes(producto))
     existe ? producto.cantidad++ :
         (producto.cantidad = 1, carrito.push(producto))
@@ -66,12 +67,45 @@ function borrarProducto() {
         document
             .querySelector(`#btn-borrar-${producto.codigo}`)
             .addEventListener("click", () => {
-                carrito = carrito.filter(productoFiltrado => productoFiltrado.codigo !== producto.codigo);
-                cuerpoTabla.innerHTML = ""
-                cargaTablaDeCarrito()
+                let existe = (carrito.includes(producto))
+                existe && 
+                    (carrito = carrito.filter(productoFiltrado => productoFiltrado.codigo !== producto.codigo),
+                    cuerpoTabla.innerHTML = "",
+                    cargaTablaDeCarrito(),
+                    sAlertQuitado())
             });
     })
 }
+
+
+const sAlertAgredado = ()=> {
+    Swal.fire({
+        title: 'AGREDADO!',
+        text: 'gracias!!',
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        showConfirmButton: false,
+        background:'#eeff41',
+        color: 'black',
+        timer: 1000
+      })
+}
+
+const sAlertQuitado = ()=> {
+    Swal.fire({
+        title: 'BORRADO!',
+        // text: 'gracias!!',
+        toast: true,
+        position: 'top-start',
+        icon: 'success',
+        showConfirmButton: false,
+        background:'#ff3d00',
+        color: 'black',
+        timer: 1000
+      })
+}
+
 
 
 
