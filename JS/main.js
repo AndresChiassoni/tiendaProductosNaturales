@@ -12,11 +12,11 @@ function generaCardProductos() {
                                        </div>
                                        <div class="card-action center-align">
                                           <button id="btn-cargar-${producto.codigo}" class="waves-effect waves-light btn">Agregar al carrito</button>
-                                          <button id="btn-borrar-${producto.codigo}" class="waves-effect waves-light btn red">Quitar </button>
                                        </div>
                                      </div>
                                     </div>`
     });
+                                        // <button id="btn-borrar-${producto.codigo}" class="waves-effect waves-light btn red">Quitar </button>
     agregarProducto();
 }
 
@@ -33,6 +33,8 @@ function cargaTablaDeCarrito() {
                                  <td>${producto.precio}</td>
                                  <td>${producto.cantidad}</td>
                                  <td>${producto.subTotal.toFixed(2)}</td>
+                                 <td><button id="btn-borrar-${producto.codigo}" class="waves-effect
+                                 waves-light btn red">Quitar </button></td>
                               </tr>`
     });
     localStorage.setItem("carrito", JSON.stringify(carrito))
