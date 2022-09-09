@@ -1,4 +1,6 @@
 
+M.AutoInit();
+
 const pedirDatosServidor = async() => {
     await fetch('JS/bbdd.json')
             .then((response) => response.json())
@@ -13,8 +15,8 @@ pedirDatosServidor()
 
 function generaCardProductos() {
         productos.forEach((producto) => {
-        cardProducto.innerHTML += `<div class="col l4 m6 s12">
-              <div class="class card light-green accent-2">
+        cardProducto.innerHTML += `<div class="col l3 m6 s12">
+              <div class="class card large light-green accent-2">
                  <div class="class card-image">
                     <img src="./Assets/images/stevia.jpg" alt="aceite">
                  </div>
@@ -40,12 +42,12 @@ function cargaTablaDeCarrito() {
         total += producto.subTotal
         cuerpoTabla.innerHTML += `<tr>
                                  <td>${producto.nombre}</td>
-                                 <td class="center-align">${producto.precio}</td>
-                                 <td class="center-align">${producto.cantidad}</td>
-                                 <td class="center-align">${producto.subTotal.toFixed(2)}</td>
-                                 <td class="center-align"><button id="btn-borrar-${producto.codigo}" class="waves-effect
-                                 waves-light btn red">Quitar </button></td>
-                              </tr>`
+                                 <td>${producto.precio}</td>
+                                 <td>${producto.cantidad}</td>
+                                 <td>${producto.subTotal.toFixed(2)}</td>
+                                 <td><button id="btn-borrar-${producto.codigo}" class="waves-effect
+                                 waves-light btn red">x</button></td>
+                                 </tr>`
     });
     localStorage.setItem("carrito", JSON.stringify(carrito))
     muestraTotal.innerHTML = `<h3>TOTAL $ ${total.toFixed(2)}</h3>`
