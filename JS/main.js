@@ -1,6 +1,7 @@
 
 M.AutoInit();
 
+
 const pedirDatosServidor = async() => {
     await fetch('JS/bbdd.json')
             .then((response) => response.json())
@@ -61,6 +62,8 @@ function agregarProducto() {
         document
             .querySelector(`#btn-cargar-${producto.codigo}`)
             .addEventListener("click", () => {
+                cantidadProductos++
+                cargaTotal()
                 let existe = (carrito.includes(producto))
                 existe ? producto.cantidad++ :
                     (producto.cantidad = 1, carrito.push(producto))
@@ -81,11 +84,20 @@ function borrarProducto() {
                 existe &&
                     (carrito = carrito.filter(productoFiltrado => productoFiltrado.codigo !== producto.codigo),
                     cuerpoTabla.innerHTML = "",
+                    cantidadProductos = cantidadProductos - (producto.cantidad),
+                    cargaTotal(),
                     cargaTablaDeCarrito(),
                     sAlert('BORRADO!', 'warning', '#ff3d00'))
             });
     })
 }
+
+const cargaTotal = ()=> {
+    muestraCantidad.innerHTML = `${cantidadProductos}`
+}
+
+
+
 
 const sAlert =(mensaje, icono, colorFondo)=> {
     Swal.fire({

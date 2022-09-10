@@ -1,8 +1,12 @@
 
+#tituloTabla{
+    position: fixed;
+}
+
 #iconoCarro{
     margin-top: 0.5vw;
     margin-left: 0.5vw;
-    color: black;
+    /* color: black; */
 }
 
 header {
