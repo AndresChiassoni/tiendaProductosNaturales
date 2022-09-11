@@ -5,7 +5,7 @@
         "marca": "TERRASANA",
         "precio": 732.15,
         "stock ": 25,
-        "foto": "./Assets/images/stevia.jpg"
+        "foto": "./Assets/images/aceite_terrasana.png"
     },
     {
         "codigo": "1231",
@@ -13,7 +13,7 @@
         "marca": "TERRASANA",
         "precio": 423.89,
         "stock ": 30,
-        "foto": "./Assets/images/stevia.jpg"
+        "foto": "./Assets/images/tomateTerrasana.png"
     },
 
     {
@@ -22,7 +22,7 @@
         "marca": "TERRASANA",
         "precio": 529.22,
         "stock ": 15,
-        "foto": "./Assets/images/stevia.jpg"
+        "foto": "./Assets/images/saucoTerrasana.png"
     },
 
     {
@@ -31,7 +31,7 @@
         "marca": "TERRAVITA",
         "precio": 806.25,
         "stock ": 12,
-        "foto": "./Assets/images/stevia.jpg"
+        "foto": "./Assets/images/vinoMalbec.png"
     },
 
     {
@@ -40,7 +40,7 @@
         "marca": "EGGLESS",
         "precio": 181.34,
         "stock ": 50,
-        "foto": "./Assets/images/stevia.jpg"
+        "foto": "./Assets/images/mayonesaEggless.png"
     },
 
     {
@@ -49,7 +49,7 @@
         "marca": "PLANTY",
         "precio": 270.05,
         "stock ": 50,
-        "foto": "./Assets/images/stevia.jpg"
+        "foto": "./Assets/images/datiles-Planty.png"
     },
 
     {
@@ -58,7 +58,7 @@
         "marca": "NATUFRESH",
         "precio": 339.36,
         "stock ": 25,
-        "foto": "./Assets/images/stevia.jpg"
+        "foto": "./Assets/images/jugoArandano.png"
     },
 
     {
@@ -67,7 +67,7 @@
         "marca": "INTI ZEN",
         "precio": 325.98,
         "stock ": 10,
-        "foto": "./Assets/images/stevia.jpg"
+        "foto": "./Assets/images/teInti.png"
     },
 
     {
@@ -76,9 +76,34 @@
         "marca": "TERRAVITA",
         "precio": 802.15,
         "stock ": 12,
-        "foto": "./Assets/images/stevia.jpg"
-    }
+        "foto": "./Assets/images/vinoTerravitaCavernet.png"
+    },
 
+    {
+        "codigo": "3555",
+        "nombre": "YERNA MATE X 500 GRS",
+        "marca": "MISION NATURAL",
+        "precio": 680.00,
+        "stock ": 12,
+        "foto": "./Assets/images/mision_nat_yerba.png"
+    },
+
+    {
+        "codigo": "3555",
+        "nombre": "CHOCOLATE BLANCO CON VAINILLA NAT. 70 GRS",
+        "marca": "GET REAL",
+        "precio": 332.00,
+        "stock ": 24,
+        "foto": "./Assets/images/chocolateBlanco.png"
+    },
+    {
+        "codigo": "3555",
+        "nombre": "HARINA DE COCO SIN TACC 200 GRS",
+        "marca": "EL COSACO",
+        "precio": 190.00,
+        "stock ": 12,
+        "foto": "./Assets/images/harinaCoco.png"
+    }
 ]
 
 
