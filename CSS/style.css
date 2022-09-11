@@ -1,25 +1,11 @@
 
-#tituloTabla{
-    position: fixed;
-}
-
 #iconoCarro{
     margin-top: 0.5vw;
     margin-left: 0.5vw;
-    /* color: black; */
 }
 
 header {
-    margin-bottom: 10px;
-}
-
-.titulo {
-    font-size: 2.5em;
-}
-
-.texto-ingresado {
-    font-size: 20px;
-    background-color: yellow;
+    margin-bottom: 25px;
 }
 
 em {
@@ -32,7 +18,8 @@ footer {
 
 img {
    margin: auto;
-   padding-top: 15px;
+   padding-top: 1px;
+   padding-left: 15px;
    object-fit: cover;
    width: 50%  !important;
    height:50%  !important;
@@ -51,3 +38,21 @@ body {
     /*idem*/
 }
 
+.tituloEtiqueta {
+    font-family: 'Pangolin', cursive;
+}
+.tituloEtiquetaTitulo{
+    font-size: 22px  !important ;
+    font-style: normal !important;
+    font-weight: bold;
+}
+
+.cards{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.btnPagar{
+    margin-top: 10px;
+    margin-right: 10px;
+}

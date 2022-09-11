@@ -19,7 +19,7 @@ function generaCardProductos() {
         cardProducto.innerHTML += `<div class="col l3 m6 s12">
               <div class="class card large light-green accent-2">
                  <div class="class card-image">
-                    <img src="./Assets/images/stevia.jpg" alt="aceite">
+                    <img src="${producto.foto}" alt="aceite">
                  </div>
                  <div class="class card-content">
                    <p class="card-title">${producto.nombre}</p>
@@ -27,7 +27,7 @@ function generaCardProductos() {
                    <p class="center-align"><em>$${producto.precio}</em></p>
                  </div>
                  <div class="card-action center-align">
-                    <button id="btn-cargar-${producto.codigo}" class="waves-effect waves-light btn">Agregar al carrito
+                    <button id="btn-cargar-${producto.codigo}" class="waves-effect waves-light btn light-green accent-4 tituloEtiqueta">Agregar al carrito
                     </button>
                  </div> 
                </div>`
@@ -37,10 +37,13 @@ function generaCardProductos() {
 
 generaCardProductos();
 
+
 function cargaTablaDeCarrito() {
     total = 0
+    cantidadProductos = 1
     carrito.forEach((producto) => {
         total += producto.subTotal
+        cantidadProductos += producto.cantidad
         cuerpoTabla.innerHTML += `<tr>
                                  <td>${producto.nombre}</td>
                                  <td>${producto.precio}</td>
@@ -51,7 +54,7 @@ function cargaTablaDeCarrito() {
                                  </tr>`
     });
     localStorage.setItem("carrito", JSON.stringify(carrito))
-    muestraTotal.innerHTML = `<h3>TOTAL $ ${total.toFixed(2)}</h3>`
+    muestraTotal.innerHTML = `<h5 class="right">TOTAL $ ${total.toFixed(2)}</h5>`
     borrarProducto()
 }
 
@@ -62,7 +65,6 @@ function agregarProducto() {
         document
             .querySelector(`#btn-cargar-${producto.codigo}`)
             .addEventListener("click", () => {
-                cantidadProductos++
                 cargaTotal()
                 let existe = (carrito.includes(producto))
                 existe ? producto.cantidad++ :
@@ -84,7 +86,7 @@ function borrarProducto() {
                 existe &&
                     (carrito = carrito.filter(productoFiltrado => productoFiltrado.codigo !== producto.codigo),
                     cuerpoTabla.innerHTML = "",
-                    cantidadProductos = cantidadProductos - (producto.cantidad),
+                    cantidadProductos -= ((producto.cantidad) +1),
                     cargaTotal(),
                     cargaTablaDeCarrito(),
                     sAlert('BORRADO!', 'warning', '#ff3d00'))

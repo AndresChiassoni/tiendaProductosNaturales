@@ -7,15 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="./Assets/images/logo_ico.jpg" />
   <link rel="stylesheet" href="./CSS/style.css" />
-
-  <!-- SWEETALERT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-  <!-- MATERIALIZE -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
   <script defer src="./JS/variables.js"></script>
   <script defer src="./JS/main.js"></script>
   <title>natural Co.</title>
@@ -24,43 +22,44 @@
 <body class="green lighten-5">
 
   <header>
-    <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper green darken-3">
-        <a href="#" class="brand-logo center"><img src="./Assets/images/logo_small.png" alt="logo"></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#">link1</a></li>
-          <li><a href="#">link2</a></li>
-          <li><a href="#">link3</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+    <div class="navbar-fixed tituloEtiqueta">
+      <nav>
+        <div class="nav-wrapper green darken-3">
+          <a href="#" class="brand-logo"><img src="./Assets/images/logo_small (4).png" alt="logo"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">link1</a></li>
+            <li><a href="#">link2</a></li>
+            <li><a href="#">link3</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <main >
-    
+  <main>
+
     <div class="row">
       <div class="col s12">
         <ul class="tabs">
-          <li class="tab col s9 active lime accent-4"><a class="black-text" href="#test1">Productos Naturales</a></li>
+          <li class="tab col s9 lime accent-4">
+            <a class="black-text tituloEtiqueta tituloEtiquetaTitulo" href="#test1">
+              Productos Naturales</a>
+          </li>
           <li class="tab col s3 lime accent-2">
             <a href="#test2">
-              <i id="iconoCarro" class="material-icons small green-text">shopping_cart</i>
+              <i id="iconoCarro" class="material-icons small green-text">
+                shopping_cart</i>
               <span id="cantidadTotal" class="red-text"></span>
             </a>
           </li>
         </ul>
         <div>
           <div id="test1" class="col s12">
-
-            <!-- <h1 class="center-align">Productos Naturales</h1> -->
-            <div id="cardProducto" class="row">
-          </div>
+            <div id="cardProducto" class="row tituloEtiqueta cards">
+            </div>
           </div>
           <div id="test2" class="col s12">
-
-            <table>
+            <table class="tituloEtiqueta">
               <thead>
                 <th>nombre</th>
                 <th>precio</th>
@@ -69,23 +68,22 @@
                 <th></th>
               </thead>
               <tbody id="cuerpoTabla">
-
               </tbody>
             </table>
-
-            <div id="totalCompra">
+            <div id="totalCompra" class="tituloEtiqueta">
+            </div>
+            <div>
+               <a class="waves-effect waves-light btn right light-green btnPagar">Pagar</a>
             </div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
           </div>
         </div>
       </div>
-
     </div>
+
   </main>
 
-  <br />
-
-  <footer class="page-footer yellow darken-4">
+  <footer class="page-footer yellow darken-4 tituloEtiqueta">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -110,7 +108,7 @@
       </div>
     </div>
   </footer>
-  
+
 </body>
 
 </html>

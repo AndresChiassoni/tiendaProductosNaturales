@@ -4,14 +4,16 @@
         "nombre": "ACEITE DE OLIVA EXTRA VIRGEN 500 ML",
         "marca": "TERRASANA",
         "precio": 732.15,
-        "stock ": 25
+        "stock ": 25,
+        "foto": "./Assets/images/stevia.jpg"
     },
     {
         "codigo": "1231",
         "nombre": "SALSA DE TOMATE 500 ML SIN T.A.C.C.",
         "marca": "TERRASANA",
         "precio": 423.89,
-        "stock ": 30
+        "stock ": 30,
+        "foto": "./Assets/images/stevia.jpg"
     },
 
     {
@@ -19,7 +21,8 @@
         "nombre": "MERMELADA DE SAUCO 300 GR SIN T.A.C.C.",
         "marca": "TERRASANA",
         "precio": 529.22,
-        "stock ": 15
+        "stock ": 15,
+        "foto": "./Assets/images/stevia.jpg"
     },
 
     {
@@ -27,7 +30,8 @@
         "nombre": "VINO ORGÁNICO MALBEC ROBLE 750 ML",
         "marca": "TERRAVITA",
         "precio": 806.25,
-        "stock ": 12
+        "stock ": 12,
+        "foto": "./Assets/images/stevia.jpg"
     },
 
     {
@@ -35,7 +39,8 @@
         "nombre": "MAYONESA VEGANA SABOR ORIGINAL 352 GR",
         "marca": "EGGLESS",
         "precio": 181.34,
-        "stock ": 50
+        "stock ": 50,
+        "foto": "./Assets/images/stevia.jpg"
     },
 
     {
@@ -43,7 +48,8 @@
         "nombre": "DÁTILES SIN CAROZO X 200 GRS PACK COMPOS",
         "marca": "PLANTY",
         "precio": 270.05,
-        "stock ": 50
+        "stock ": 50,
+        "foto": "./Assets/images/stevia.jpg"
     },
 
     {
@@ -51,7 +57,8 @@
         "nombre": "JUGO Y PULPA ARANDANO X 500 ML S/TACC",
         "marca": "NATUFRESH",
         "precio": 339.36,
-        "stock ": 25
+        "stock ": 25,
+        "foto": "./Assets/images/stevia.jpg"
     },
 
     {
@@ -59,7 +66,8 @@
         "nombre": "TÉ PATAGONIA ROOIBOS 15 SAQ",
         "marca": "INTI ZEN",
         "precio": 325.98,
-        "stock ": 10
+        "stock ": 10,
+        "foto": "./Assets/images/stevia.jpg"
     },
 
     {
@@ -67,7 +75,8 @@
         "nombre": "VINO ORGÁNICO CABERNET FRANC 750 ML",
         "marca": "TERRAVITA",
         "precio": 802.15,
-        "stock ": 12
+        "stock ": 12,
+        "foto": "./Assets/images/stevia.jpg"
     }
 
 ]
