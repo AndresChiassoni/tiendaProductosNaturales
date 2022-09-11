@@ -1,6 +1,6 @@
 [
     {
-        "codigo": "1221",
+        "codigo": "1010",
         "nombre": "ACEITE DE OLIVA EXTRA VIRGEN 500 ML",
         "marca": "TERRASANA",
         "precio": 732.15,
@@ -8,7 +8,7 @@
         "foto": "./Assets/images/aceite_terrasana.png"
     },
     {
-        "codigo": "1231",
+        "codigo": "2010",
         "nombre": "SALSA DE TOMATE 500 ML SIN T.A.C.C.",
         "marca": "TERRASANA",
         "precio": 423.89,
@@ -17,7 +17,7 @@
     },
 
     {
-        "codigo": "2554",
+        "codigo": "3010",
         "nombre": "MERMELADA DE SAUCO 300 GR SIN T.A.C.C.",
         "marca": "TERRASANA",
         "precio": 529.22,
@@ -26,7 +26,7 @@
     },
 
     {
-        "codigo": "3115",
+        "codigo": "4010",
         "nombre": "VINO ORGÁNICO MALBEC ROBLE 750 ML",
         "marca": "TERRAVITA",
         "precio": 806.25,
@@ -35,7 +35,7 @@
     },
 
     {
-        "codigo": "5255",
+        "codigo": "5010",
         "nombre": "MAYONESA VEGANA SABOR ORIGINAL 352 GR",
         "marca": "EGGLESS",
         "precio": 181.34,
@@ -44,7 +44,7 @@
     },
 
     {
-        "codigo": "2711",
+        "codigo": "6010",
         "nombre": "DÁTILES SIN CAROZO X 200 GRS PACK COMPOS",
         "marca": "PLANTY",
         "precio": 270.05,
@@ -53,7 +53,7 @@
     },
 
     {
-        "codigo": "1544",
+        "codigo": "7010",
         "nombre": "JUGO Y PULPA ARANDANO X 500 ML S/TACC",
         "marca": "NATUFRESH",
         "precio": 339.36,
@@ -62,7 +62,7 @@
     },
 
     {
-        "codigo": "3555",
+        "codigo": "8010",
         "nombre": "TÉ PATAGONIA ROOIBOS 15 SAQ",
         "marca": "INTI ZEN",
         "precio": 325.98,
@@ -71,7 +71,7 @@
     },
 
     {
-        "codigo": "3120",
+        "codigo": "9010",
         "nombre": "VINO ORGÁNICO CABERNET FRANC 750 ML",
         "marca": "TERRAVITA",
         "precio": 802.15,
@@ -80,7 +80,7 @@
     },
 
     {
-        "codigo": "3555",
+        "codigo": "1020",
         "nombre": "YERNA MATE X 500 GRS",
         "marca": "MISION NATURAL",
         "precio": 680.00,
@@ -89,7 +89,7 @@
     },
 
     {
-        "codigo": "3555",
+        "codigo": "2020",
         "nombre": "CHOCOLATE BLANCO CON VAINILLA NAT. 70 GRS",
         "marca": "GET REAL",
         "precio": 332.00,
@@ -97,7 +97,7 @@
         "foto": "./Assets/images/chocolateBlanco.png"
     },
     {
-        "codigo": "3555",
+        "codigo": "3020",
         "nombre": "HARINA DE COCO SIN TACC 200 GRS",
         "marca": "EL COSACO",
         "precio": 190.00,
