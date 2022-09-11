@@ -1,6 +1,17 @@
 
 M.AutoInit();
 
+document.addEventListener("keyup", e=>{
+
+    if (e.target.matches("#buscador")){
+        document.querySelectorAll(".articulos").forEach(articulo =>{
+            articulo.textContent.toUpperCase().includes(e.target.value.toUpperCase())
+            ?articulo.classList.remove("filtro")
+            :articulo.classList.add("filtro")
+        }) 
+    }
+})
+
 
 const pedirDatosServidor = async() => {
     await fetch('JS/bbdd.json')
@@ -16,7 +27,7 @@ pedirDatosServidor()
 
 function generaCardProductos() {
         productos.forEach((producto) => {
-        cardProducto.innerHTML += `<div class="col l3 m6 s12">
+        cardProducto.innerHTML += `<div class="col l3 m6 s12 articulos">
               <div class="class card large light-green accent-2">
                  <div class="class card-image">
                     <img src="${producto.foto}" alt="producto">

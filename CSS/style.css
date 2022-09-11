@@ -64,3 +64,11 @@ body {
     margin-top: 10px;
     margin-right: 10px;
 }
+
+.filtro {
+    display: none;
+}
+
+.buscardor { 
+  background-color: wheat;
+}
