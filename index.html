@@ -27,7 +27,8 @@
       <nav>
         <div class="nav-wrapper green darken-3">
           <a href="#" class="brand-logo"><img src="./Assets/images/logo_small (4).png" class="imgLogo" alt="logo"></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
             <li><i class="material-icons">search</i></li>
             <li><input type="text" name="buscador" id="buscador" placeholder="Buscar" class="buscador"></li>
             <li><a href="#">link1</a></li>
@@ -35,11 +36,16 @@
             <li><a href="#">link3</a></li>
           </ul>
         </div>
+        <ul class="sidenav" id="mobile-demo">
+          <li><a href="#">link1</a></li>
+          <li><a href="#">link2</a></li>
+          <li><a href="#">link3</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main class="container">
 
     <div class="row">
       <div class="col s12">
