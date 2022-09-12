@@ -30,7 +30,7 @@ function generaCardProductos() {
         cardProducto.innerHTML += `<div class="col l3 m6 s12 articulos">
               <div class="class card large light-green accent-2">
                  <div class="class card-image">
-                    <img src="${producto.foto}" alt="producto">
+                    <img src="${producto.foto}" alt="producto" class="center-align">
                  </div>
                  <div class="class card-content">
                    <p class="card-title">${producto.nombre}</p>
