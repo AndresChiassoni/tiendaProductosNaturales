@@ -58,11 +58,12 @@ function cargaTablaDeCarrito() {
         cuerpoTabla.innerHTML += `<tr>
                                  <td>${producto.nombre}</td>
                                  <td>${producto.precio}</td>
-                                 <td>${producto.cantidad}</td>
+                                 <td>${producto.cantidad}</td>                                
                                  <td>${producto.subTotal.toFixed(2)}</td>
                                  <td><button id="btn-borrar-${producto.codigo}" class="waves-effect
                                  waves-light btn red">x</button></td>
                                  </tr>`
+                                //  <td>${producto.cantidad}</td>
     });
     localStorage.setItem("carrito", JSON.stringify(carrito))
     muestraTotal.innerHTML = `<h5 class="right">TOTAL $ ${total.toFixed(2)}</h5>`
@@ -108,9 +109,6 @@ function borrarProducto() {
 const cargaTotal = ()=> {
     muestraCantidad.innerHTML = `${cantidadProductos}`
 }
-
-
-
 
 const sAlert =(mensaje, icono, colorFondo)=> {
     Swal.fire({

@@ -69,6 +69,10 @@ body {
     display: none;
 }
 
-.buscardor { 
-  background-color: wheat;
+input {
+    color: white;
+    font-family: 'Pangolin', cursive !important;
+    font-size: 1.2vw !important;
 }
+
+
