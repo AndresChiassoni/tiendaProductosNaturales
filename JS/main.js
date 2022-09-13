@@ -20,12 +20,12 @@ const pedirDatosServidor = async() => {
                 productos = data
                 generaCardProductos()
               })
-            .catch ((error) => alert("se ha producido un error"))
+            // .catch ((error) => alert("se ha producido un error"))
 }
 
 pedirDatosServidor()
 
-function generaCardProductos() {
+function generaCardProductos() {   
         productos.forEach((producto) => {
         cardProducto.innerHTML += `<div class="col l3 m6 s12 articulos">
               <div class="class card large light-green accent-2">
@@ -48,10 +48,9 @@ function generaCardProductos() {
 
 generaCardProductos();
 
-
 function cargaTablaDeCarrito() {
     total = 0
-    cantidadProductos = 1
+    cantidadProductos = 0
     carrito.forEach((producto) => {
         total += producto.subTotal
         cantidadProductos += producto.cantidad
@@ -63,24 +62,28 @@ function cargaTablaDeCarrito() {
                                  <td><button id="btn-borrar-${producto.codigo}" class="waves-effect
                                  waves-light btn red">x</button></td>
                                  </tr>`
-                                //  <td>${producto.cantidad}</td>
     });
+    // recarga && carrito === JSON.parse(localStorage.getItem("carrito")) 
     localStorage.setItem("carrito", JSON.stringify(carrito))
     muestraTotal.innerHTML = `<h5 class="right">TOTAL $ ${total.toFixed(2)}</h5>`
+    muestraCantidad.innerHTML = `${cantidadProductos}`
     borrarProducto()
 }
 
 cargaTablaDeCarrito();
 
+
 function agregarProducto() {
     productos.forEach((producto) => {
         document
             .querySelector(`#btn-cargar-${producto.codigo}`)
-            .addEventListener("click", () => {
-                cargaTotal()
-                let existe = (carrito.includes(producto))
-                existe ? producto.cantidad++ :
-                    (producto.cantidad = 1, carrito.push(producto))
+            .addEventListener("click", () => {  
+                let existe = carrito.some(someProd => someProd.codigo === producto.codigo)
+                debugger
+                existe ? (prodFind = carrito.find((productoFind) => 
+                            productoFind.codigo === producto.codigo),
+                            prodFind.cantidad++)
+                        :(producto.cantidad = 1, carrito.push(producto))
                 producto.subTotal = producto.precio * producto.cantidad
                 cuerpoTabla.innerHTML = ""
                 cargaTablaDeCarrito()
@@ -91,6 +94,7 @@ function agregarProducto() {
 
 function borrarProducto() {
     carrito.forEach((producto) => {
+       
         document
             .querySelector(`#btn-borrar-${producto.codigo}`)
             .addEventListener("click", () => {
@@ -98,17 +102,13 @@ function borrarProducto() {
                 existe &&
                     (carrito = carrito.filter(productoFiltrado => productoFiltrado.codigo !== producto.codigo),
                     cuerpoTabla.innerHTML = "",
-                    cantidadProductos -= ((producto.cantidad) +1),
-                    cargaTotal(),
+                    producto.cantidad--,
                     cargaTablaDeCarrito(),
                     sAlert('BORRADO!', 'warning', '#ff3d00'))
             });
     })
 }
 
-const cargaTotal = ()=> {
-    muestraCantidad.innerHTML = `${cantidadProductos}`
-}
 
 const sAlert =(mensaje, icono, colorFondo)=> {
     Swal.fire({
