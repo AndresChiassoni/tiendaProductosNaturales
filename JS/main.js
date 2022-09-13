@@ -20,7 +20,7 @@ const pedirDatosServidor = async() => {
                 productos = data
                 generaCardProductos()
               })
-            // .catch ((error) => alert("se ha producido un error"))
+            .catch ((error) => alert("se ha producido un error"))
 }
 
 pedirDatosServidor()
