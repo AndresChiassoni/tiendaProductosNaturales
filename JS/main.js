@@ -12,7 +12,6 @@ document.addEventListener("keyup", e=>{
     }
 })
 
-
 const pedirDatosServidor = async() => {
     await fetch('JS/bbdd.json')
             .then((response) => response.json())
@@ -62,8 +61,7 @@ function cargaTablaDeCarrito() {
                                  <td><button id="btn-borrar-${producto.codigo}" class="waves-effect
                                  waves-light btn red">x</button></td>
                                  </tr>`
-    });
-    // recarga && carrito === JSON.parse(localStorage.getItem("carrito")) 
+    }); 
     localStorage.setItem("carrito", JSON.stringify(carrito))
     muestraTotal.innerHTML = `<h5 class="right">TOTAL $ ${total.toFixed(2)}</h5>`
     muestraCantidad.innerHTML = `${cantidadProductos}`
@@ -79,7 +77,6 @@ function agregarProducto() {
             .querySelector(`#btn-cargar-${producto.codigo}`)
             .addEventListener("click", () => {  
                 let existe = carrito.some(someProd => someProd.codigo === producto.codigo)
-                debugger
                 existe ? (prodFind = carrito.find((productoFind) => 
                             productoFind.codigo === producto.codigo),
                             prodFind.cantidad++)
@@ -93,8 +90,7 @@ function agregarProducto() {
 }
 
 function borrarProducto() {
-    carrito.forEach((producto) => {
-       
+    carrito.forEach((producto) => {     
         document
             .querySelector(`#btn-borrar-${producto.codigo}`)
             .addEventListener("click", () => {
