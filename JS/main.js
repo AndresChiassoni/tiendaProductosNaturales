@@ -54,11 +54,12 @@ function cargaTablaDeCarrito() {
         total += producto.subTotal
         cantidadProductos += producto.cantidad
         cuerpoTabla.innerHTML += `<tr>
-                                 <td>${producto.nombre}</td>
-                                 <td>${producto.precio}</td>
-                                 <td>${producto.cantidad}</td>                                
-                                 <td>${producto.subTotal.toFixed(2)}</td>
-                                 <td><button id="btn-borrar-${producto.codigo}" class="waves-effect
+                                 <td class="center"><img src="${producto.foto}" class="fotoEnCarro"></td>
+                                 <td class="center">${producto.nombre}</td>
+                                 <td class="center">${producto.precio}</td>
+                                 <td class="center">${producto.cantidad}</td>                                
+                                 <td class="center">${producto.subTotal.toFixed(2)}</td>
+                                 <td class="center"><button id="btn-borrar-${producto.codigo}" class="waves-effect
                                  waves-light btn red">x</button></td>
                                  </tr>`
     }); 
