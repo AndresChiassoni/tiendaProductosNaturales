@@ -5,7 +5,8 @@
         "marca": "TERRASANA",
         "precio": 732.15,
         "stock ": 25,
-        "foto": "./Assets/images/aceite_terrasana.png"
+        "foto": "./Assets/images/aceite_terrasana.png",
+        "colorCard": "terrasana"
     },
     {
         "codigo": "2010",
@@ -13,7 +14,8 @@
         "marca": "TERRASANA",
         "precio": 423.89,
         "stock ": 30,
-        "foto": "./Assets/images/tomateTerrasana.png"
+        "foto": "./Assets/images/tomateTerrasana.png",
+        "colorCard": "terrasana"
     },
 
     {
@@ -22,7 +24,8 @@
         "marca": "TERRASANA",
         "precio": 529.22,
         "stock ": 15,
-        "foto": "./Assets/images/saucoTerrasana.png"
+        "foto": "./Assets/images/saucoTerrasana.png",
+        "colorCard": "terrasana"
     },
 
     {
@@ -31,7 +34,8 @@
         "marca": "TERRAVITA",
         "precio": 806.25,
         "stock ": 12,
-        "foto": "./Assets/images/vinoMalbec.png"
+        "foto": "./Assets/images/vinoMalbec.png",
+        "colorCard": "terravita"
     },
 
     {
@@ -40,16 +44,19 @@
         "marca": "EGGLESS",
         "precio": 181.34,
         "stock ": 50,
-        "foto": "./Assets/images/mayonesaEggless.png"
+        "foto": "./Assets/images/mayonesaEggless.png",
+        "colorCard": "eggles"
     },
 
     {
         "codigo": "6010",
-        "nombre": "DÁTILES SIN CAROZO X 200 GRS PACK COMPOS",
+        "nombre": "DÁTILES S/CAROZO X 200 GRS PK COMPOS",
         "marca": "PLANTY",
         "precio": 270.05,
         "stock ": 50,
-        "foto": "./Assets/images/datiles-Planty.png"
+        "foto": "./Assets/images/datiles-Planty.png",
+        "colorCard": "planty"
+
     },
 
     {
@@ -58,16 +65,19 @@
         "marca": "NATUFRESH",
         "precio": 339.36,
         "stock ": 25,
-        "foto": "./Assets/images/jugoArandano.png"
+        "foto": "./Assets/images/jugoArandano.png",
+        "colorCard": "natufresh"
     },
 
     {
         "codigo": "8010",
-        "nombre": "TÉ PATAGONIA ROOIBOS 15 SAQ",
-        "marca": "INTI ZEN",
+        "nombre": "TÉ PATAGONIA ROOIBOS 15 SAQUITOS",
+        "marca": "INT IZEN",
         "precio": 325.98,
         "stock ": 10,
-        "foto": "./Assets/images/teInti.png"
+        "foto": "./Assets/images/teInti.png",
+        "colorCard": "intizen"
+
     },
 
     {
@@ -76,7 +86,8 @@
         "marca": "TERRAVITA",
         "precio": 802.15,
         "stock ": 12,
-        "foto": "./Assets/images/vinoTerravitaCavernet.png"
+        "foto": "./Assets/images/vinoTerravitaCavernet.png",
+        "colorCard": "terravita"
     },
 
     {
@@ -85,24 +96,28 @@
         "marca": "MISION NATURAL",
         "precio": 680.00,
         "stock ": 12,
-        "foto": "./Assets/images/mision_nat_yerba.png"
+        "foto": "./Assets/images/mision_nat_yerba.png",
+        "colorCard": "misionNatural"
     },
 
     {
         "codigo": "2020",
-        "nombre": "CHOCOLATE BLANCO CON VAINILLA NAT. 70 GRS",
+        "nombre": "CHOCOLATE BCO VAIN. NAT. 70 GRS",
         "marca": "GET REAL",
         "precio": 332.00,
         "stock ": 24,
-        "foto": "./Assets/images/chocolateBlanco.png"
+        "foto": "./Assets/images/chocolateBlanco.png",
+        "colorCard": "gelReal"
     },
+
     {
         "codigo": "3020",
         "nombre": "HARINA DE COCO SIN TACC 200 GRS",
         "marca": "EL COSACO",
         "precio": 190.00,
         "stock ": 12,
-        "foto": "./Assets/images/harinaCoco.png"
+        "foto": "./Assets/images/harinaCoco.png",
+        "colorCard": "elCosaco"
     }
 ]
 

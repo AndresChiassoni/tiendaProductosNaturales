@@ -28,8 +28,8 @@ footer {
 img {
     width: auto !important; 
     height: auto;
-    max-height: 280px !important;
-    margin: 10px auto 5px auto;
+    max-height: 220px !important;
+    margin: 15px auto 5px auto;
 }
 
 .fotoEnCarro {
@@ -39,7 +39,17 @@ img {
 
 p {
     object-fit:contain;
+    margin: auto;
+    padding: auto;
+    /* padding-bottom: 5px; */
+    /* margin-bottom: 5px; */
 }
+.contienePrecio {
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
 
 body {
     display: grid;
@@ -53,8 +63,9 @@ body {
 .tituloEtiqueta {
     font-family: 'Pangolin', cursive;
 }
+
 .tituloEtiquetaTitulo{
-    font-size: 22px  !important ;
+    font-size: 30px  !important ;
     font-style: normal !important;
     font-weight: bold;
 }
@@ -79,4 +90,39 @@ input {
     font-size: 1.2vw !important;
 }
 
+#terrasana {
+    background-color: #fff176;
+}
+
+#terravita {
+    background-color: #ffcc80;
+}
+
+#eggles{
+    background-color: #64ffda;
+}
+
+#planty {
+    background-color: #40c4ff;
+}
+
+#natufresh{
+    background-color: #ef9a9a;
+}
+
+#intizen {
+    background-color: #e1bee7;
+}
+
+#misionNatural {
+    background-color: #d4e157;
+}
+
+#gelReal {
+    background-color:#ffab91;
+}
+
+#elCosaco {
+    background-color: #b0bec5;
+}
 

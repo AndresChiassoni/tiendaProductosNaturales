@@ -27,14 +27,14 @@ pedirDatosServidor()
 function generaCardProductos() {   
         productos.forEach((producto) => {
         cardProducto.innerHTML += `<div class="col l3 m6 s12 articulos">
-              <div class="class card large light-green accent-2">
+              <div class="class card large" id="${producto.colorCard}">
                  <div class="class card-image">
                     <img src="${producto.foto}" alt="producto" class="center-align">
                  </div>
                  <div class="class card-content">
                    <p class="card-title">${producto.nombre}</p>
-                   <p> ${producto.marca}</p>
-                   <p class="center-align"><em>$${producto.precio}</em></p>
+                   <p>${producto.marca}</p>
+                   <p class="center-align contienePrecio">$${producto.precio}</p>
                  </div>
                  <div class="card-action center-align">
                     <button id="btn-cargar-${producto.codigo}" class="waves-effect waves-light btn light-green accent-4 tituloEtiqueta">Agregar al carrito
