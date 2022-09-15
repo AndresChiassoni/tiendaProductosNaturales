@@ -94,7 +94,7 @@
         "codigo": "1020",
         "nombre": "YERNA MATE ORGANIC X 500 GRS",
         "marca": "MISION NATURAL",
-        "precio": 680.00,
+        "precio": 680.25,
         "stock ": 12,
         "foto": "./Assets/images/mision_nat_yerba.png",
         "colorCard": "misionNatural"
@@ -104,7 +104,7 @@
         "codigo": "2020",
         "nombre": "CHOCOLATE BCO VAIN. NAT. 70 GRS",
         "marca": "GET REAL",
-        "precio": 332.00,
+        "precio": 332.50,
         "stock ": 24,
         "foto": "./Assets/images/chocolateBlanco.png",
         "colorCard": "gelReal"
@@ -114,7 +114,7 @@
         "codigo": "3020",
         "nombre": "HARINA DE COCO SIN TACC 200 GRS",
         "marca": "EL COSACO",
-        "precio": 190.00,
+        "precio": 190.50,
         "stock ": 12,
         "foto": "./Assets/images/harinaCoco.png",
         "colorCard": "elCosaco"

@@ -34,7 +34,7 @@ function generaCardProductos() {
                  <div class="class card-content">
                    <p class="card-title">${producto.nombre}</p>
                    <p>${producto.marca}</p>
-                   <p class="center-align contienePrecio">$${producto.precio}</p>
+                   <p class="center-align contienePrecio">$${(producto.precio).toFixed(2)}</p>
                  </div>
                  <div class="card-action center-align">
                     <button id="btn-cargar-${producto.codigo}" class="waves-effect waves-light btn light-green accent-4 tituloEtiqueta">Agregar al carrito
@@ -56,7 +56,7 @@ function cargaTablaDeCarrito() {
         cuerpoTabla.innerHTML += `<tr>
                                  <td class="center"><img src="${producto.foto}" class="fotoEnCarro"></td>
                                  <td class="center">${producto.nombre}</td>
-                                 <td class="center">${producto.precio}</td>
+                                 <td class="center">${(producto.precio).toFixed(2)}</td>
                                  <td class="center">${producto.cantidad}</td>                                
                                  <td class="center">${producto.subTotal.toFixed(2)}</td>
                                  <td class="center"><button id="btn-borrar-${producto.codigo}" class="waves-effect
