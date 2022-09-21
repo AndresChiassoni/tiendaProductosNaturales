@@ -12,8 +12,8 @@ document.addEventListener("keyup", e=>{
     }
 })
 
-const pedirDatosServidor = async() => {
-    await fetch('JS/bbdd.json')
+const pedirDatosServidor = () => {
+        fetch(URL)
             .then((response) => response.json())
             .then ((data) =>{
                 productos = data
@@ -21,6 +21,7 @@ const pedirDatosServidor = async() => {
               })
             .catch ((error) => alert("se ha producido un error"))
 }
+
 
 pedirDatosServidor()
 
@@ -50,7 +51,11 @@ generaCardProductos();
 function cargaTablaDeCarrito() {
     total = 0
     cantidadProductos = 0
+    
     carrito.forEach((producto) => {
+        const nCantidad = Object.values(carrito).reduce((acum, {cantidad}) => acum + cantidad, 0)
+        const nTotal = Object.values(carrito).reduce((acum, {cantidad , precio}) => acum + cantidad * precio, 0)
+        console.log(nTotal)
         total += producto.subTotal
         cantidadProductos += producto.cantidad
         cuerpoTabla.innerHTML += `<tr>
@@ -62,7 +67,8 @@ function cargaTablaDeCarrito() {
                                  <td class="center"><button id="btn-borrar-${producto.codigo}" class="waves-effect
                                  waves-light btn red">x</button></td>
                                  </tr>`
-    }); 
+    });
+    
     localStorage.setItem("carrito", JSON.stringify(carrito))
     muestraTotal.innerHTML = `<h5 class="right">TOTAL $ ${total.toFixed(2)}</h5>`
     muestraCantidad.innerHTML = `${cantidadProductos}`
@@ -105,6 +111,14 @@ function borrarProducto() {
             });
     })
 }
+
+   function borrarCarro() {
+             document.querySelector("#botonPagar")
+                     .addEventListener("click", (carrito.splice(0, carrito.length)))
+             }
+            
+
+
 
 
 const sAlert =(mensaje, icono, colorFondo)=> {
