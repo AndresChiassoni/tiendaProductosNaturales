@@ -22,7 +22,6 @@ const pedirDatosServidor = () => {
             .catch ((error) => alert("se ha producido un error"))
 }
 
-
 pedirDatosServidor()
 
 function generaCardProductos() {   
@@ -51,11 +50,7 @@ generaCardProductos();
 function cargaTablaDeCarrito() {
     total = 0
     cantidadProductos = 0
-    
     carrito.forEach((producto) => {
-        const nCantidad = Object.values(carrito).reduce((acum, {cantidad}) => acum + cantidad, 0)
-        const nTotal = Object.values(carrito).reduce((acum, {cantidad , precio}) => acum + cantidad * precio, 0)
-        console.log(nTotal)
         total += producto.subTotal
         cantidadProductos += producto.cantidad
         cuerpoTabla.innerHTML += `<tr>
@@ -91,7 +86,7 @@ function agregarProducto() {
                 producto.subTotal = producto.precio * producto.cantidad
                 cuerpoTabla.innerHTML = ""
                 cargaTablaDeCarrito()
-                sAlert ('AGREDADO Gracias!!','success','#eeff41')
+                sAlert ('AGREDADO Gracias!!','success','#eeff41', 'top-end')
             });
     });
 }
@@ -107,25 +102,32 @@ function borrarProducto() {
                     cuerpoTabla.innerHTML = "",
                     producto.cantidad--,
                     cargaTablaDeCarrito(),
-                    sAlert('BORRADO!', 'warning', '#ff3d00'))
+                    sAlert('BORRADO!', 'warning', '#ff3d00', 'top-end'))
             });
     })
 }
 
    function borrarCarro() {
              document.querySelector("#botonPagar")
-                     .addEventListener("click", (carrito.splice(0, carrito.length)))
+                     .addEventListener("click", ()=> {
+                        carrito.forEach((producto) => {
+                            producto.cantidad = 0,
+                            producto.subTotal = 0,
+                            carrito = [],
+                            cargaTablaDeCarrito(),
+                            cuerpoTabla.innerHTML = "",
+                            sAlert('Muchas Gracias por su Compra!!', 'success', '#c6ff00', 'center')
+                        })
+                     })
              }
             
+borrarCarro()
 
-
-
-
-const sAlert =(mensaje, icono, colorFondo)=> {
+const sAlert =(mensaje, icono, colorFondo, posicion)=> {
     Swal.fire({
         title: mensaje,
         toast: true,
-        position: 'top-end',
+        position: posicion,
         icon: icono,
         showConfirmButton: false,
         background: colorFondo,
