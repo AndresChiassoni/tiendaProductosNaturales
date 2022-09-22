@@ -107,23 +107,20 @@ function borrarProducto() {
     })
 }
 
-   function borrarCarro() {
-             document.querySelector("#botonPagar")
-                     .addEventListener("click", ()=> {
-                        carrito.forEach((producto) => {
-                            producto.cantidad = 0,
-                            producto.subTotal = 0,
-                            carrito = [],
-                            cargaTablaDeCarrito(),
-                            cuerpoTabla.innerHTML = "",
-                            sAlert('Muchas Gracias por su Compra!!', 'success', '#c6ff00', 'center')
-                        })
-                     })
-             }
-            
+function borrarCarro() {
+    document.querySelector("#botonPagar")
+           .addEventListener("click", () => { 
+                     (carrito.length !== 0) && sAlert('Muchas Gracias por su Compra!!', 'success', '#c6ff00',
+                             'center')                              
+                     carrito.length = 0
+                     cargaTablaDeCarrito()
+                     cuerpoTabla.innerHTML = ""
+                 })      
+}
+
 borrarCarro()
 
-const sAlert =(mensaje, icono, colorFondo, posicion)=> {
+const sAlert = (mensaje, icono, colorFondo, posicion) => {
     Swal.fire({
         title: mensaje,
         toast: true,
@@ -132,6 +129,6 @@ const sAlert =(mensaje, icono, colorFondo, posicion)=> {
         showConfirmButton: false,
         background: colorFondo,
         color: 'black',
-        timer: 1000
+        timer: 1500
     })
 }
