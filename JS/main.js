@@ -63,15 +63,13 @@ function cargaTablaDeCarrito() {
                                  waves-light btn red">x</button></td>
                                  </tr>`
     });
-    
     localStorage.setItem("carrito", JSON.stringify(carrito))
     muestraTotal.innerHTML = `<h5 class="right">TOTAL $ ${total.toFixed(2)}</h5>`
     muestraCantidad.innerHTML = `${cantidadProductos}`
-    borrarProducto()
+    borrarProducto()  
 }
 
 cargaTablaDeCarrito();
-
 
 function agregarProducto() {
     productos.forEach((producto) => {
@@ -109,13 +107,17 @@ function borrarProducto() {
 
 function borrarCarro() {
     document.querySelector("#botonPagar")
-           .addEventListener("click", () => { 
-                     (carrito.length !== 0) && sAlert('Muchas Gracias por su Compra!!', 'success', '#c6ff00',
-                             'center')                              
-                     carrito.length = 0
-                     cargaTablaDeCarrito()
-                     cuerpoTabla.innerHTML = ""
-                 })      
+        .addEventListener("click", () => { 
+               (carrito.length !== 0) && sAlert('Muchas Gracias por su Compra!!', 'success', '#c6ff00', 'center')                              
+               carrito = []
+               cargaTablaDeCarrito()
+               setTimeout(limpiarPantallaCarro, 1500)
+           })
+}
+
+const limpiarPantallaCarro = () => {
+    cuerpoTabla.innerHTML = ""
+    window.location.reload()
 }
 
 borrarCarro()
